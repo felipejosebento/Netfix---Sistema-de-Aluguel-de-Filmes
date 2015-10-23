@@ -1,0 +1,17 @@
+*.iws
+*Db.properties
+*Db.script
+.settings
+stacktrace.log
+/Netfix/*.zip
+/plugin.xml
+/Netfix/*.log
+/Netfix/*DB.*
+/Netfix/cobertura.ser
+.DS_Store
+/Netfix/out/
+/Netfix/web-app/plugins
+/Netfix/web-app/WEB-INF/classes
+/Netfix/.link_to_grails_plugins/
+/Netfix/target-eclipse/
+/Netfix/target/
