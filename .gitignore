@@ -3,7 +3,7 @@
 *Db.script
 .settings
 stacktrace.log
-/Netfix/*.zip
+/*/Netfix/*.zip
 /plugin.xml
 /Netfix/*.log
 /Netfix/*DB.*
@@ -14,4 +14,4 @@ stacktrace.log
 /Netfix/web-app/WEB-INF/classes
 /Netfix/.link_to_grails_plugins/
 /Netfix/target-eclipse/
-/Netfix/target/
+/Netfix/target/*/

@@ -3,7 +3,7 @@ package br.ufscar.dc
 class Titulo {
 
     static constraints = {
-        ano_lancamento.(maxsize(4))
+        ano_lancamento(maxsize:4)
         genero ( inList: ["ação", "animação","aventura","comédia","documentario","drama","lgbt","policial","romance","suspense", "terror"])
         faixa_etaria(inList: ["livre","10","12","14","16","18"])
         nome(blank:false,size: 1..30,matches:/[a-zA-Z]/)

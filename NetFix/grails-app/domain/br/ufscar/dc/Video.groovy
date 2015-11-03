@@ -4,7 +4,7 @@ class Video {
 
     static constraints = {
         legenda ( inList: ["português","inglês","espanhol"])
-        idiota_titulo ( inList: ["português","inglês","espanhol","nativo"])
+        idioma_titulo ( inList: ["português","inglês","espanhol","nativo"])
         qualidade ( inList: ["baixo","médio","automatico","alto"])
         
     }
