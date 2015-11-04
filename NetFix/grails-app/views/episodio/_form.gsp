@@ -20,12 +20,12 @@
 
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: episodioInstance, field: 'vEpisodio', 'error')} required">
-	<label for="vEpisodio">
-		<g:message code="episodio.vEpisodio.label" default="V Episodio" />
+<div class="fieldcontain ${hasErrors(bean: episodioInstance, field: 'video', 'error')} required">
+	<label for="video">
+		<g:message code="episodio.video.label" default="Video" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:select id="vEpisodio" name="vEpisodio.id" from="${br.ufscar.dc.Video.list()}" optionKey="id" required="" value="${episodioInstance?.vEpisodio?.id}" class="many-to-one"/>
+	<g:select id="video" name="video.id" from="${br.ufscar.dc.Video.list()}" optionKey="id" required="" value="${episodioInstance?.video?.id}" class="many-to-one"/>
 
 </div>
 

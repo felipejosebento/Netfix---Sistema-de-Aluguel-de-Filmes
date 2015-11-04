@@ -2,6 +2,7 @@ package br.ufscar.dc
 
 class Video {
 
+    static belongsTo = [filme:Filme,episodio:Episodio]
     static constraints = {
         legenda ( inList: ["português","inglês","espanhol"])
         idioma_titulo ( inList: ["português","inglês","espanhol","nativo"])

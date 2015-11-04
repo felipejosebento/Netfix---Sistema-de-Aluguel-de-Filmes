@@ -5,12 +5,10 @@ class Filme extends Titulo{
     static constraints = {
         diretor(blank:false,matches:/[a-zA-Z]/)
         
-        vFilme(blank:false)
-        
     }
     
     
+    Video video;
     String diretor
     
-    Video vFilme
 }

@@ -86,11 +86,11 @@
 				</li>
 				</g:if>
 			
-				<g:if test="${filmeInstance?.vFilme}">
+				<g:if test="${filmeInstance?.video}">
 				<li class="fieldcontain">
-					<span id="vFilme-label" class="property-label"><g:message code="filme.vFilme.label" default="V Filme" /></span>
+					<span id="video-label" class="property-label"><g:message code="filme.video.label" default="Video" /></span>
 					
-						<span class="property-value" aria-labelledby="vFilme-label"><g:link controller="video" action="show" id="${filmeInstance?.vFilme?.id}">${filmeInstance?.vFilme?.encodeAsHTML()}</g:link></span>
+						<span class="property-value" aria-labelledby="video-label"><g:link controller="video" action="show" id="${filmeInstance?.video?.id}">${filmeInstance?.video?.encodeAsHTML()}</g:link></span>
 					
 				</li>
 				</g:if>

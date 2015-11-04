@@ -1,7 +1,7 @@
 package br.ufscar.dc
 
 class Titulo {
-
+   
     static constraints = {
         ano_lancamento(maxsize:4)
         genero ( inList: ["ação", "animação","aventura","comédia","documentario","drama","lgbt","policial","romance","suspense", "terror"])
