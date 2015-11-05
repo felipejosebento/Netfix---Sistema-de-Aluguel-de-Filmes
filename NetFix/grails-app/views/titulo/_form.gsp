@@ -56,3 +56,12 @@
 
 </div>
 
+<div class="fieldcontain ${hasErrors(bean: tituloInstance, field: 'atores', 'error')} ">
+	<label for="atores">
+		<g:message code="titulo.atores.label" default="Atores" />
+		
+	</label>
+	
+
+</div>
+

@@ -10,6 +10,7 @@ class Video {
         
     }
     
+    String frames
     String legenda
     String idioma_titulo
     int tempo_atual

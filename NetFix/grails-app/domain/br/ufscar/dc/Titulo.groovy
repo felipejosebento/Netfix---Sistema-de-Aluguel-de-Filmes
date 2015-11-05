@@ -2,13 +2,15 @@ package br.ufscar.dc
 
 class Titulo {
    
+    static hasmany = [atores:Ator]
     static constraints = {
         ano_lancamento(maxsize:4)
         genero ( inList: ["ação", "animação","aventura","comédia","documentario","drama","lgbt","policial","romance","suspense", "terror"])
         faixa_etaria(inList: ["livre","10","12","14","16","18"])
-        nome(blank:false,size: 1..30,matches:/[a-zA-Z]/)
-        sinopse(blank:false,size: 1..300,matches:/[a-zA-Z]/)
+        nome(blank:false,size: 1..30,matches:"[a-zA-Z]+")
+        sinopse(blank:false,size: 1..300,matches:"[a-zA-Z]+")
         avaliacao_geral(min:0, max:5)
+        //atores (minsize:1)
         
         
         
@@ -20,6 +22,7 @@ class Titulo {
     
     static int num_titulos
     
+    //List atores
     String nome
     String Sinopse
     char avaliacao_geral

@@ -38,6 +38,33 @@
 
 </div>
 
+<div class="fieldcontain ${hasErrors(bean: videoInstance, field: 'episodio', 'error')} required">
+	<label for="episodio">
+		<g:message code="video.episodio.label" default="Episodio" />
+		<span class="required-indicator">*</span>
+	</label>
+	<g:select id="episodio" name="episodio.id" from="${br.ufscar.dc.Episodio.list()}" optionKey="id" required="" value="${videoInstance?.episodio?.id}" class="many-to-one"/>
+
+</div>
+
+<div class="fieldcontain ${hasErrors(bean: videoInstance, field: 'filme', 'error')} required">
+	<label for="filme">
+		<g:message code="video.filme.label" default="Filme" />
+		<span class="required-indicator">*</span>
+	</label>
+	<g:select id="filme" name="filme.id" from="${br.ufscar.dc.Filme.list()}" optionKey="id" required="" value="${videoInstance?.filme?.id}" class="many-to-one"/>
+
+</div>
+
+<div class="fieldcontain ${hasErrors(bean: videoInstance, field: 'frames', 'error')} required">
+	<label for="frames">
+		<g:message code="video.frames.label" default="Frames" />
+		<span class="required-indicator">*</span>
+	</label>
+	<g:textField name="frames" required="" value="${videoInstance?.frames}"/>
+
+</div>
+
 <div class="fieldcontain ${hasErrors(bean: videoInstance, field: 'pausePlay', 'error')} ">
 	<label for="pausePlay">
 		<g:message code="video.pausePlay.label" default="Pause Play" />
