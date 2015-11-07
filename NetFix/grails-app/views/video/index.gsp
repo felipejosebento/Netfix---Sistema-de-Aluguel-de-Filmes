@@ -32,9 +32,9 @@
 					
 						<g:sortableColumn property="duracao" title="${message(code: 'video.duracao.label', default: 'Duracao')}" />
 					
-						<th><g:message code="video.episodio.label" default="Episodio" /></th>
+						<g:sortableColumn property="frames" title="${message(code: 'video.frames.label', default: 'Frames')}" />
 					
-						<th><g:message code="video.filme.label" default="Filme" /></th>
+						<g:sortableColumn property="pausePlay" title="${message(code: 'video.pausePlay.label', default: 'Pause Play')}" />
 					
 					</tr>
 				</thead>
@@ -50,9 +50,9 @@
 					
 						<td>${fieldValue(bean: videoInstance, field: "duracao")}</td>
 					
-						<td>${fieldValue(bean: videoInstance, field: "episodio")}</td>
+						<td>${fieldValue(bean: videoInstance, field: "frames")}</td>
 					
-						<td>${fieldValue(bean: videoInstance, field: "filme")}</td>
+						<td><g:formatBoolean boolean="${videoInstance.pausePlay}" /></td>
 					
 					</tr>
 				</g:each>

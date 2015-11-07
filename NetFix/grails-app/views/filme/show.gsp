@@ -77,6 +77,15 @@
 				</li>
 				</g:if>
 			
+				<g:if test="${filmeInstance?.capa}">
+				<li class="fieldcontain">
+					<span id="capa-label" class="property-label"><g:message code="filme.capa.label" default="Capa" /></span>
+					
+						<span class="property-value" aria-labelledby="capa-label"><g:fieldValue bean="${filmeInstance}" field="capa"/></span>
+					
+				</li>
+				</g:if>
+			
 				<g:if test="${filmeInstance?.diretor}">
 				<li class="fieldcontain">
 					<span id="diretor-label" class="property-label"><g:message code="filme.diretor.label" default="Diretor" /></span>

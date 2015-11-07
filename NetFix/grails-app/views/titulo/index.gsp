@@ -24,17 +24,17 @@
 			<thead>
 					<tr>
 					
-						<g:sortableColumn property="ano_lancamento" title="${message(code: 'titulo.ano_lancamento.label', default: 'Anolancamento')}" />
+						<g:sortableColumn property="nome" title="${message(code: 'titulo.nome.label', default: 'Nome')}" />
 					
 						<g:sortableColumn property="genero" title="${message(code: 'titulo.genero.label', default: 'Genero')}" />
 					
 						<g:sortableColumn property="faixa_etaria" title="${message(code: 'titulo.faixa_etaria.label', default: 'Faixaetaria')}" />
 					
-						<g:sortableColumn property="nome" title="${message(code: 'titulo.nome.label', default: 'Nome')}" />
-					
-						<g:sortableColumn property="sinopse" title="${message(code: 'titulo.sinopse.label', default: 'Sinopse')}" />
+						<g:sortableColumn property="ano_lancamento" title="${message(code: 'titulo.ano_lancamento.label', default: 'Anolancamento')}" />
 					
 						<g:sortableColumn property="avaliacao_geral" title="${message(code: 'titulo.avaliacao_geral.label', default: 'Avaliacaogeral')}" />
+					
+						<g:sortableColumn property="capa" title="${message(code: 'titulo.capa.label', default: 'Capa')}" />
 					
 					</tr>
 				</thead>
@@ -42,17 +42,22 @@
 				<g:each in="${tituloInstanceList}" status="i" var="tituloInstance">
 					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
 					
-						<td><g:link action="show" id="${tituloInstance.id}">${fieldValue(bean: tituloInstance, field: "ano_lancamento")}</g:link></td>
+						<td><g:link action="show" id="${tituloInstance.id}">${fieldValue(bean: tituloInstance, field: "nome")}</g:link></td>
 					
 						<td>${fieldValue(bean: tituloInstance, field: "genero")}</td>
 					
 						<td>${fieldValue(bean: tituloInstance, field: "faixa_etaria")}</td>
 					
-						<td>${fieldValue(bean: tituloInstance, field: "nome")}</td>
-					
-						<td>${fieldValue(bean: tituloInstance, field: "sinopse")}</td>
+						<td>${fieldValue(bean: tituloInstance, field: "ano_lancamento")}</td>
 					
 						<td>${fieldValue(bean: tituloInstance, field: "avaliacao_geral")}</td>
+					
+						<td>
+                                                    <img src="${createLink(controller:'titulo', action:'showCapa', id:"${tituloInstance.id}")}"
+                                                     
+                                                         title="${tituloInstance.capaNome}" 
+                                                         width="60px" height="60px"/>
+                                                </td>
 					
 					</tr>
 				</g:each>

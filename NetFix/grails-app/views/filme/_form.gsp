@@ -56,6 +56,15 @@
 
 </div>
 
+<div class="fieldcontain ${hasErrors(bean: filmeInstance, field: 'capa', 'error')} ">
+	<label for="capa">
+		<g:message code="filme.capa.label" default="Capa" />
+		
+	</label>
+	<g:textArea name="capa" cols="40" rows="5" maxlength="65536" value="${filmeInstance?.capa}"/>
+
+</div>
+
 <div class="fieldcontain ${hasErrors(bean: filmeInstance, field: 'diretor', 'error')} required">
 	<label for="diretor">
 		<g:message code="filme.diretor.label" default="Diretor" />

@@ -18,6 +18,11 @@ class TituloController {
     def show(Titulo tituloInstance) {
         respond tituloInstance
     }
+    def showCapa() {
+def tituloInstance = Titulo.get(params.id)
+response.outputStream << tituloInstance.capa // write the image to the outputstream
+response.outputStream.flush()
+}
 
     def create() {
         respond new Titulo(params)
@@ -33,6 +38,13 @@ class TituloController {
         if (tituloInstance.hasErrors()) {
             respond tituloInstance.errors, view:'create'
             return
+        }
+        def imageFile = request.getFile('capa')
+        
+        if(!imageFile.empty){
+            //imageFile.transferTo( new File( prodDir, imageFile.originalFilename))
+            tituloInstance.capa = imageFile.getBytes()
+            tituloInstance.capaNome = imageFile.originalFilename
         }
 
         tituloInstance.save flush:true

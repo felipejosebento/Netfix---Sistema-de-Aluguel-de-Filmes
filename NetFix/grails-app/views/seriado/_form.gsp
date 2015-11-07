@@ -56,6 +56,15 @@
 
 </div>
 
+<div class="fieldcontain ${hasErrors(bean: seriadoInstance, field: 'capa', 'error')} ">
+	<label for="capa">
+		<g:message code="seriado.capa.label" default="Capa" />
+		
+	</label>
+	<g:textArea name="capa" cols="40" rows="5" maxlength="65536" value="${seriadoInstance?.capa}"/>
+
+</div>
+
 <div class="fieldcontain ${hasErrors(bean: seriadoInstance, field: 'criador', 'error')} required">
 	<label for="criador">
 		<g:message code="seriado.criador.label" default="Criador" />
@@ -65,12 +74,12 @@
 
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: seriadoInstance, field: 'episodio', 'error')} ">
-	<label for="episodio">
-		<g:message code="seriado.episodio.label" default="Episodio" />
+<div class="fieldcontain ${hasErrors(bean: seriadoInstance, field: 'episodios', 'error')} ">
+	<label for="episodios">
+		<g:message code="seriado.episodios.label" default="Episodios" />
 		
 	</label>
-	<g:select name="episodio" from="${br.ufscar.dc.Episodio.list()}" multiple="multiple" optionKey="id" size="5" value="${seriadoInstance?.episodio*.id}" class="many-to-many"/>
+	<g:select name="episodios" from="${br.ufscar.dc.Episodio.list()}" multiple="multiple" optionKey="id" size="5" value="${seriadoInstance?.episodios*.id}" class="many-to-many"/>
 
 </div>
 

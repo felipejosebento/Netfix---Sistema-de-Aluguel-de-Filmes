@@ -77,6 +77,15 @@
 				</li>
 				</g:if>
 			
+				<g:if test="${seriadoInstance?.capa}">
+				<li class="fieldcontain">
+					<span id="capa-label" class="property-label"><g:message code="seriado.capa.label" default="Capa" /></span>
+					
+						<span class="property-value" aria-labelledby="capa-label"><g:fieldValue bean="${seriadoInstance}" field="capa"/></span>
+					
+				</li>
+				</g:if>
+			
 				<g:if test="${seriadoInstance?.criador}">
 				<li class="fieldcontain">
 					<span id="criador-label" class="property-label"><g:message code="seriado.criador.label" default="Criador" /></span>
@@ -86,12 +95,12 @@
 				</li>
 				</g:if>
 			
-				<g:if test="${seriadoInstance?.episodio}">
+				<g:if test="${seriadoInstance?.episodios}">
 				<li class="fieldcontain">
-					<span id="episodio-label" class="property-label"><g:message code="seriado.episodio.label" default="Episodio" /></span>
+					<span id="episodios-label" class="property-label"><g:message code="seriado.episodios.label" default="Episodios" /></span>
 					
-						<g:each in="${seriadoInstance.episodio}" var="e">
-						<span class="property-value" aria-labelledby="episodio-label"><g:link controller="episodio" action="show" id="${e.id}">${e?.encodeAsHTML()}</g:link></span>
+						<g:each in="${seriadoInstance.episodios}" var="e">
+						<span class="property-value" aria-labelledby="episodios-label"><g:link controller="episodio" action="show" id="${e.id}">${e?.encodeAsHTML()}</g:link></span>
 						</g:each>
 					
 				</li>

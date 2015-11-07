@@ -2,12 +2,12 @@
 
 
 
-<div class="fieldcontain ${hasErrors(bean: tituloInstance, field: 'ano_lancamento', 'error')} required">
-	<label for="ano_lancamento">
-		<g:message code="titulo.ano_lancamento.label" default="Anolancamento" />
+<div class="fieldcontain ${hasErrors(bean: tituloInstance, field: 'nome', 'error')} required">
+	<label for="nome">
+		<g:message code="titulo.nome.label" default="Nome" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:textField name="ano_lancamento" required="" value="${tituloInstance?.ano_lancamento}"/>
+	<g:textField name="nome" maxlength="30" pattern="${tituloInstance.constraints.nome.matches}" required="" value="${tituloInstance?.nome}"/>
 
 </div>
 
@@ -29,21 +29,12 @@
 
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: tituloInstance, field: 'nome', 'error')} required">
-	<label for="nome">
-		<g:message code="titulo.nome.label" default="Nome" />
+<div class="fieldcontain ${hasErrors(bean: tituloInstance, field: 'ano_lancamento', 'error')} required">
+	<label for="ano_lancamento">
+		<g:message code="titulo.ano_lancamento.label" default="Anolancamento" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:textField name="nome" maxlength="30" pattern="${tituloInstance.constraints.nome.matches}" required="" value="${tituloInstance?.nome}"/>
-
-</div>
-
-<div class="fieldcontain ${hasErrors(bean: tituloInstance, field: 'sinopse', 'error')} required">
-	<label for="sinopse">
-		<g:message code="titulo.sinopse.label" default="Sinopse" />
-		<span class="required-indicator">*</span>
-	</label>
-	<g:textArea name="sinopse" cols="40" rows="5" maxlength="300" required="" value="${tituloInstance?.sinopse}"/>
+	<g:textField name="ano_lancamento" required="" value="${tituloInstance?.ano_lancamento}"/>
 
 </div>
 
@@ -56,12 +47,21 @@
 
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: tituloInstance, field: 'atores', 'error')} ">
-	<label for="atores">
-		<g:message code="titulo.atores.label" default="Atores" />
-		
+<div class="fieldcontain ${hasErrors(bean: tituloInstance, field: 'capa', 'error')} required">
+	<label for="capa">
+		<g:message code="titulo.capa.label" default="Capa" />
+		<span class="required-indicator">*</span>
 	</label>
-	
+	<input type="file" id="capa" name="capa" />
+
+</div>
+
+<div class="fieldcontain ${hasErrors(bean: tituloInstance, field: 'sinopse', 'error')} required">
+	<label for="sinopse">
+		<g:message code="titulo.sinopse.label" default="Sinopse" />
+		<span class="required-indicator">*</span>
+	</label>
+	<g:textArea name="sinopse" cols="40" rows="5" maxlength="300" required="" value="${tituloInstance?.sinopse}"/>
 
 </div>
 
