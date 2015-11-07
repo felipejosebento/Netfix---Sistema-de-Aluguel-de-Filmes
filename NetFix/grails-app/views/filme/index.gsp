@@ -24,17 +24,17 @@
 			<thead>
 					<tr>
 					
-						<g:sortableColumn property="ano_lancamento" title="${message(code: 'filme.ano_lancamento.label', default: 'Anolancamento')}" />
+						<g:sortableColumn property="nome" title="${message(code: 'filme.nome.label', default: 'Nome')}" />
 					
 						<g:sortableColumn property="genero" title="${message(code: 'filme.genero.label', default: 'Genero')}" />
 					
 						<g:sortableColumn property="faixa_etaria" title="${message(code: 'filme.faixa_etaria.label', default: 'Faixaetaria')}" />
 					
-						<g:sortableColumn property="nome" title="${message(code: 'filme.nome.label', default: 'Nome')}" />
-					
-						<g:sortableColumn property="sinopse" title="${message(code: 'filme.sinopse.label', default: 'Sinopse')}" />
+						<g:sortableColumn property="ano_lancamento" title="${message(code: 'filme.ano_lancamento.label', default: 'Anolancamento')}" />
 					
 						<g:sortableColumn property="avaliacao_geral" title="${message(code: 'filme.avaliacao_geral.label', default: 'Avaliacaogeral')}" />
+					
+						<g:sortableColumn property="capa" title="${message(code: 'filme.capa.label', default: 'Capa')}" />
 					
 					</tr>
 				</thead>
@@ -42,17 +42,17 @@
 				<g:each in="${filmeInstanceList}" status="i" var="filmeInstance">
 					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
 					
-						<td><g:link action="show" id="${filmeInstance.id}">${fieldValue(bean: filmeInstance, field: "ano_lancamento")}</g:link></td>
+						<td><g:link action="show" id="${filmeInstance.id}">${fieldValue(bean: filmeInstance, field: "nome")}</g:link></td>
 					
 						<td>${fieldValue(bean: filmeInstance, field: "genero")}</td>
 					
 						<td>${fieldValue(bean: filmeInstance, field: "faixa_etaria")}</td>
 					
-						<td>${fieldValue(bean: filmeInstance, field: "nome")}</td>
-					
-						<td>${fieldValue(bean: filmeInstance, field: "sinopse")}</td>
+						<td>${fieldValue(bean: filmeInstance, field: "ano_lancamento")}</td>
 					
 						<td>${fieldValue(bean: filmeInstance, field: "avaliacao_geral")}</td>
+					
+						<td>${fieldValue(bean: filmeInstance, field: "capa")}</td>
 					
 					</tr>
 				</g:each>

@@ -23,11 +23,11 @@
 			</g:if>
 			<ol class="property-list filme">
 			
-				<g:if test="${filmeInstance?.ano_lancamento}">
+				<g:if test="${filmeInstance?.nome}">
 				<li class="fieldcontain">
-					<span id="ano_lancamento-label" class="property-label"><g:message code="filme.ano_lancamento.label" default="Anolancamento" /></span>
+					<span id="nome-label" class="property-label"><g:message code="filme.nome.label" default="Nome" /></span>
 					
-						<span class="property-value" aria-labelledby="ano_lancamento-label"><g:fieldValue bean="${filmeInstance}" field="ano_lancamento"/></span>
+						<span class="property-value" aria-labelledby="nome-label"><g:fieldValue bean="${filmeInstance}" field="nome"/></span>
 					
 				</li>
 				</g:if>
@@ -50,20 +50,11 @@
 				</li>
 				</g:if>
 			
-				<g:if test="${filmeInstance?.nome}">
+				<g:if test="${filmeInstance?.ano_lancamento}">
 				<li class="fieldcontain">
-					<span id="nome-label" class="property-label"><g:message code="filme.nome.label" default="Nome" /></span>
+					<span id="ano_lancamento-label" class="property-label"><g:message code="filme.ano_lancamento.label" default="Anolancamento" /></span>
 					
-						<span class="property-value" aria-labelledby="nome-label"><g:fieldValue bean="${filmeInstance}" field="nome"/></span>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${filmeInstance?.sinopse}">
-				<li class="fieldcontain">
-					<span id="sinopse-label" class="property-label"><g:message code="filme.sinopse.label" default="Sinopse" /></span>
-					
-						<span class="property-value" aria-labelledby="sinopse-label"><g:fieldValue bean="${filmeInstance}" field="sinopse"/></span>
+						<span class="property-value" aria-labelledby="ano_lancamento-label"><g:fieldValue bean="${filmeInstance}" field="ano_lancamento"/></span>
 					
 				</li>
 				</g:if>
@@ -81,7 +72,14 @@
 				<li class="fieldcontain">
 					<span id="capa-label" class="property-label"><g:message code="filme.capa.label" default="Capa" /></span>
 					
-						<span class="property-value" aria-labelledby="capa-label"><g:fieldValue bean="${filmeInstance}" field="capa"/></span>
+				</li>
+				</g:if>
+			
+				<g:if test="${filmeInstance?.sinopse}">
+				<li class="fieldcontain">
+					<span id="sinopse-label" class="property-label"><g:message code="filme.sinopse.label" default="Sinopse" /></span>
+					
+						<span class="property-value" aria-labelledby="sinopse-label"><g:fieldValue bean="${filmeInstance}" field="sinopse"/></span>
 					
 				</li>
 				</g:if>

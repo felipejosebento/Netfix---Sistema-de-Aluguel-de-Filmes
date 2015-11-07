@@ -52,7 +52,7 @@
 			
 				<g:if test="${tituloInstance?.ano_lancamento}">
 				<li class="fieldcontain">
-					<span id="ano_lancamento-label" class="property-label"><g:message code="titulo.ano_lancamento.label" default="Anolancamento" /></span>
+					<span id="ano_lancamento-label" class="property-label"><g:message code="titulo.ano_lancamento.label" default="Ano de Lancamento" /></span>
 					
 						<span class="property-value" aria-labelledby="ano_lancamento-label"><g:fieldValue bean="${tituloInstance}" field="ano_lancamento"/></span>
 					

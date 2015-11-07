@@ -2,12 +2,12 @@
 
 
 
-<div class="fieldcontain ${hasErrors(bean: filmeInstance, field: 'ano_lancamento', 'error')} required">
-	<label for="ano_lancamento">
-		<g:message code="filme.ano_lancamento.label" default="Anolancamento" />
+<div class="fieldcontain ${hasErrors(bean: filmeInstance, field: 'nome', 'error')} required">
+	<label for="nome">
+		<g:message code="filme.nome.label" default="Nome" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:textField name="ano_lancamento" required="" value="${filmeInstance?.ano_lancamento}"/>
+	<g:textField name="nome" maxlength="30" pattern="${filmeInstance.constraints.nome.matches}" required="" value="${filmeInstance?.nome}"/>
 
 </div>
 
@@ -29,21 +29,12 @@
 
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: filmeInstance, field: 'nome', 'error')} required">
-	<label for="nome">
-		<g:message code="filme.nome.label" default="Nome" />
+<div class="fieldcontain ${hasErrors(bean: filmeInstance, field: 'ano_lancamento', 'error')} required">
+	<label for="ano_lancamento">
+		<g:message code="filme.ano_lancamento.label" default="Anolancamento" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:textField name="nome" maxlength="30" pattern="${filmeInstance.constraints.nome.matches}" required="" value="${filmeInstance?.nome}"/>
-
-</div>
-
-<div class="fieldcontain ${hasErrors(bean: filmeInstance, field: 'sinopse', 'error')} required">
-	<label for="sinopse">
-		<g:message code="filme.sinopse.label" default="Sinopse" />
-		<span class="required-indicator">*</span>
-	</label>
-	<g:textArea name="sinopse" cols="40" rows="5" maxlength="300" required="" value="${filmeInstance?.sinopse}"/>
+	<g:textField name="ano_lancamento" pattern="${filmeInstance.constraints.ano_lancamento.matches}" required="" value="${filmeInstance?.ano_lancamento}"/>
 
 </div>
 
@@ -56,12 +47,21 @@
 
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: filmeInstance, field: 'capa', 'error')} ">
+<div class="fieldcontain ${hasErrors(bean: filmeInstance, field: 'capa', 'error')} required">
 	<label for="capa">
 		<g:message code="filme.capa.label" default="Capa" />
-		
+		<span class="required-indicator">*</span>
 	</label>
-	<g:textArea name="capa" cols="40" rows="5" maxlength="65536" value="${filmeInstance?.capa}"/>
+	<input type="file" id="capa" name="capa" />
+
+</div>
+
+<div class="fieldcontain ${hasErrors(bean: filmeInstance, field: 'sinopse', 'error')} required">
+	<label for="sinopse">
+		<g:message code="filme.sinopse.label" default="Sinopse" />
+		<span class="required-indicator">*</span>
+	</label>
+	<g:textArea name="sinopse" cols="40" rows="5" maxlength="300" required="" value="${filmeInstance?.sinopse}"/>
 
 </div>
 

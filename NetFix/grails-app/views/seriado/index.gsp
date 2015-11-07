@@ -24,17 +24,17 @@
 			<thead>
 					<tr>
 					
-						<g:sortableColumn property="ano_lancamento" title="${message(code: 'seriado.ano_lancamento.label', default: 'Anolancamento')}" />
+						<g:sortableColumn property="nome" title="${message(code: 'seriado.nome.label', default: 'Nome')}" />
 					
 						<g:sortableColumn property="genero" title="${message(code: 'seriado.genero.label', default: 'Genero')}" />
 					
 						<g:sortableColumn property="faixa_etaria" title="${message(code: 'seriado.faixa_etaria.label', default: 'Faixaetaria')}" />
 					
-						<g:sortableColumn property="nome" title="${message(code: 'seriado.nome.label', default: 'Nome')}" />
-					
-						<g:sortableColumn property="sinopse" title="${message(code: 'seriado.sinopse.label', default: 'Sinopse')}" />
+						<g:sortableColumn property="ano_lancamento" title="${message(code: 'seriado.ano_lancamento.label', default: 'Anolancamento')}" />
 					
 						<g:sortableColumn property="avaliacao_geral" title="${message(code: 'seriado.avaliacao_geral.label', default: 'Avaliacaogeral')}" />
+					
+						<g:sortableColumn property="capa" title="${message(code: 'seriado.capa.label', default: 'Capa')}" />
 					
 					</tr>
 				</thead>
@@ -42,17 +42,17 @@
 				<g:each in="${seriadoInstanceList}" status="i" var="seriadoInstance">
 					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
 					
-						<td><g:link action="show" id="${seriadoInstance.id}">${fieldValue(bean: seriadoInstance, field: "ano_lancamento")}</g:link></td>
+						<td><g:link action="show" id="${seriadoInstance.id}">${fieldValue(bean: seriadoInstance, field: "nome")}</g:link></td>
 					
 						<td>${fieldValue(bean: seriadoInstance, field: "genero")}</td>
 					
 						<td>${fieldValue(bean: seriadoInstance, field: "faixa_etaria")}</td>
 					
-						<td>${fieldValue(bean: seriadoInstance, field: "nome")}</td>
-					
-						<td>${fieldValue(bean: seriadoInstance, field: "sinopse")}</td>
+						<td>${fieldValue(bean: seriadoInstance, field: "ano_lancamento")}</td>
 					
 						<td>${fieldValue(bean: seriadoInstance, field: "avaliacao_geral")}</td>
+					
+						<td>${fieldValue(bean: seriadoInstance, field: "capa")}</td>
 					
 					</tr>
 				</g:each>
