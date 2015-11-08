@@ -1,5 +1,6 @@
 TODO
 arrumar primary key de titulo
-Video e Titulo relacao 1 pra 1 !!!
-Deletar Titulo deleta ATOR?
+Video e Titulo relacao 1 pra 1 !!!-- Adamski
+Deletar Titulo deleta ATOR? -- Adamski
 Arrumar VIDEO -> baixar filme? dar URL? URL pro app ou de saite de fora? oq é o VIDEO?
+Colocar foto no Ator

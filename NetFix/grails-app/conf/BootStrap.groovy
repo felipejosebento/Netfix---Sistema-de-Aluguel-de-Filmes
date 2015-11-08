@@ -13,11 +13,16 @@ class BootStrap {
         brad.save()
         
         new Filme(nome:"teste" ,sinopse:"ruim",avaliacao_geral: '5',faixa_etaria: "livre",ano_lancamento:"2012",
-            genero:"aventura",diretor:"ramirez",video: new Video().save(),
+            genero:"aventura",diretor:"rodriguez",video: new Video().save(),
             capa: org.apache.commons.io.IOUtils.toByteArray(this.class.classLoader.getResourceAsStream('data/5.jpg')))
         .addToAtores(brad).save()
         // org.apache.commons.io.IOUtils.toByteArray()-> converte arquivo em bytes
         //this.class.classLoader.getResourceAsStream()-> le arquivo como InputStream
+        
+        new Filme(nome:"teste2" ,sinopse:"ruim",avaliacao_geral: '4',faixa_etaria: "livre",ano_lancamento:"2013",
+            genero:"aventura",diretor:"ramirez",video: new Video().save(),
+            capa: org.apache.commons.io.IOUtils.toByteArray(this.class.classLoader.getResourceAsStream('data/4.jpg')))
+        .addToAtores(brad).save()
     }
     def destroy = {
     }

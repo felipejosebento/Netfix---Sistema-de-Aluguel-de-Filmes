@@ -11,3 +11,12 @@
 
 </div>
 
+<div class="fieldcontain ${hasErrors(bean: atorInstance, field: 'titulos', 'error')} ">
+	<label for="titulos">
+		<g:message code="ator.titulos.label" default="Titulos" />
+		
+	</label>
+	
+
+</div>
+

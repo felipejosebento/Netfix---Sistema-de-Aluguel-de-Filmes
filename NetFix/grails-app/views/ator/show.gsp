@@ -32,6 +32,17 @@
 				</li>
 				</g:if>
 			
+				<g:if test="${atorInstance?.titulos}">
+				<li class="fieldcontain">
+					<span id="titulos-label" class="property-label"><g:message code="ator.titulos.label" default="Titulos" /></span>
+					
+						<g:each in="${atorInstance.titulos}" var="t">
+						<span class="property-value" aria-labelledby="titulos-label"><g:link controller="titulo" action="show" id="${t.id}">${t?.encodeAsHTML()}</g:link></span>
+						</g:each>
+					
+				</li>
+				</g:if>
+			
 			</ol>
 			<g:form url="[resource:atorInstance, action:'delete']" method="DELETE">
 				<fieldset class="buttons">

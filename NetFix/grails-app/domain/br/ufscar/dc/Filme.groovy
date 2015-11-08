@@ -9,6 +9,6 @@ class Filme extends Titulo{
     
     
     Video video;
-    String diretor
+    String diretor = "Padilha"
     
 }
