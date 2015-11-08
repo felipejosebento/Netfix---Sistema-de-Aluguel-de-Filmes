@@ -2,6 +2,24 @@
 
 
 
+<div class="fieldcontain ${hasErrors(bean: videoInstance, field: 'filme', 'error')} ">
+	<label for="filme">
+		<g:message code="video.filme.label" default="Filme" />
+		
+	</label>
+	<g:select id="filme" name="filme.id" from="${br.ufscar.dc.Filme.list()}" optionKey="id" value="${videoInstance?.filme?.id}" class="many-to-one" noSelection="['null': '']"/>
+
+</div>
+
+<div class="fieldcontain ${hasErrors(bean: videoInstance, field: 'episodio', 'error')} ">
+	<label for="episodio">
+		<g:message code="video.episodio.label" default="Episodio" />
+		
+	</label>
+	<g:select id="episodio" name="episodio.id" from="${br.ufscar.dc.Episodio.list()}" optionKey="id" value="${videoInstance?.episodio?.id}" class="many-to-one" noSelection="['null': '']"/>
+
+</div>
+
 <div class="fieldcontain ${hasErrors(bean: videoInstance, field: 'legenda', 'error')} required">
 	<label for="legenda">
 		<g:message code="video.legenda.label" default="Legenda" />

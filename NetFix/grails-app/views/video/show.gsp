@@ -23,6 +23,24 @@
 			</g:if>
 			<ol class="property-list video">
 			
+				<g:if test="${videoInstance?.filme}">
+				<li class="fieldcontain">
+					<span id="filme-label" class="property-label"><g:message code="video.filme.label" default="Filme" /></span>
+					
+						<span class="property-value" aria-labelledby="filme-label"><g:link controller="filme" action="show" id="${videoInstance?.filme?.id}">${videoInstance?.filme?.encodeAsHTML()}</g:link></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${videoInstance?.episodio}">
+				<li class="fieldcontain">
+					<span id="episodio-label" class="property-label"><g:message code="video.episodio.label" default="Episodio" /></span>
+					
+						<span class="property-value" aria-labelledby="episodio-label"><g:link controller="episodio" action="show" id="${videoInstance?.episodio?.id}">${videoInstance?.episodio?.encodeAsHTML()}</g:link></span>
+					
+				</li>
+				</g:if>
+			
 				<g:if test="${videoInstance?.legenda}">
 				<li class="fieldcontain">
 					<span id="legenda-label" class="property-label"><g:message code="video.legenda.label" default="Legenda" /></span>

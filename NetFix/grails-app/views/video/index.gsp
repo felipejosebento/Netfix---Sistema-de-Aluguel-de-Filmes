@@ -24,6 +24,10 @@
 			<thead>
 					<tr>
 					
+						<th><g:message code="video.filme.label" default="Filme" /></th>
+					
+						<th><g:message code="video.episodio.label" default="Episodio" /></th>
+					
 						<g:sortableColumn property="legenda" title="${message(code: 'video.legenda.label', default: 'Legenda')}" />
 					
 						<g:sortableColumn property="idioma_titulo" title="${message(code: 'video.idioma_titulo.label', default: 'Idiomatitulo')}" />
@@ -32,27 +36,23 @@
 					
 						<g:sortableColumn property="frames" title="${message(code: 'video.frames.label', default: 'Frames')}" />
 					
-						<g:sortableColumn property="duracao" title="${message(code: 'video.duracao.label', default: 'Duracao')}" />
-					
-						<g:sortableColumn property="pausePlay" title="${message(code: 'video.pausePlay.label', default: 'Pause Play')}" />
-					
 					</tr>
 				</thead>
 				<tbody>
 				<g:each in="${videoInstanceList}" status="i" var="videoInstance">
 					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
 					
-						<td><g:link action="show" id="${videoInstance.id}">${fieldValue(bean: videoInstance, field: "legenda")}</g:link></td>
+						<td><g:link action="show" id="${videoInstance.id}">${fieldValue(bean: videoInstance, field: "filme")}</g:link></td>
+					
+						<td>${fieldValue(bean: videoInstance, field: "episodio")}</td>
+					
+						<td>${fieldValue(bean: videoInstance, field: "legenda")}</td>
 					
 						<td>${fieldValue(bean: videoInstance, field: "idioma_titulo")}</td>
 					
 						<td>${fieldValue(bean: videoInstance, field: "qualidade")}</td>
 					
 						<td>${fieldValue(bean: videoInstance, field: "frames")}</td>
-					
-						<td>${fieldValue(bean: videoInstance, field: "duracao")}</td>
-					
-						<td><g:formatBoolean boolean="${videoInstance.pausePlay}" /></td>
 					
 					</tr>
 				</g:each>
