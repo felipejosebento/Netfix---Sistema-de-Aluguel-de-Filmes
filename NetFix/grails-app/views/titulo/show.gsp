@@ -52,7 +52,7 @@
 			
 				<g:if test="${tituloInstance?.ano_lancamento}">
 				<li class="fieldcontain">
-					<span id="ano_lancamento-label" class="property-label"><g:message code="titulo.ano_lancamento.label" default="Ano de Lancamento" /></span>
+					<span id="ano_lancamento-label" class="property-label"><g:message code="titulo.ano_lancamento.label" default="Anolancamento" /></span>
 					
 						<span class="property-value" aria-labelledby="ano_lancamento-label"><g:fieldValue bean="${tituloInstance}" field="ano_lancamento"/></span>
 					
@@ -72,13 +72,6 @@
 				<li class="fieldcontain">
 					<span id="capa-label" class="property-label"><g:message code="titulo.capa.label" default="Capa" /></span>
 					
-                                                <span class="property-value" aria-labelledby="capa-label">
-                                                
-                                                    <img src="${createLink(controller:'titulo', action:'showCapa', id:"${tituloInstance.id}")}"
-                                                     
-                                                         title="${tituloInstance.capaNome}" 
-                                                         width="120px" height="120px"/>
-                                                </span>   
 				</li>
 				</g:if>
 			
@@ -87,6 +80,17 @@
 					<span id="sinopse-label" class="property-label"><g:message code="titulo.sinopse.label" default="Sinopse" /></span>
 					
 						<span class="property-value" aria-labelledby="sinopse-label"><g:fieldValue bean="${tituloInstance}" field="sinopse"/></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${tituloInstance?.atores}">
+				<li class="fieldcontain">
+					<span id="atores-label" class="property-label"><g:message code="titulo.atores.label" default="Atores" /></span>
+					
+						<g:each in="${tituloInstance.atores}" var="a">
+						<span class="property-value" aria-labelledby="atores-label"><g:link controller="ator" action="show" id="${a.id}">${a?.encodeAsHTML()}</g:link></span>
+						</g:each>
 					
 				</li>
 				</g:if>

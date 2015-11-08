@@ -71,16 +71,17 @@
 				<g:if test="${filmeInstance?.capa}">
 				<li class="fieldcontain">
 					<span id="capa-label" class="property-label"><g:message code="filme.capa.label" default="Capa" /></span>
-                                        <span class="property-value" aria-labelledby="capa-label">
+					
+                                                <span class="property-value" aria-labelledby="capa-label">
                                                 
                                                     <img src="${createLink(controller:'filme', action:'showCapa', id:"${filmeInstance.id}")}"
                                                      
                                                          title="${filmeInstance.capaNome}" 
                                                          width="120px" height="120px"/>
-                                                </span>  
-					
+                                                </span>   
 				</li>
 				</g:if>
+
 			
 				<g:if test="${filmeInstance?.sinopse}">
 				<li class="fieldcontain">
@@ -96,6 +97,17 @@
 					<span id="diretor-label" class="property-label"><g:message code="filme.diretor.label" default="Diretor" /></span>
 					
 						<span class="property-value" aria-labelledby="diretor-label"><g:fieldValue bean="${filmeInstance}" field="diretor"/></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${filmeInstance?.atores}">
+				<li class="fieldcontain">
+					<span id="atores-label" class="property-label"><g:message code="filme.atores.label" default="Atores" /></span>
+					
+						<g:each in="${filmeInstance.atores}" var="a">
+						<span class="property-value" aria-labelledby="atores-label"><g:link controller="ator" action="show" id="${a.id}">${a?.encodeAsHTML()}</g:link></span>
+						</g:each>
 					
 				</li>
 				</g:if>

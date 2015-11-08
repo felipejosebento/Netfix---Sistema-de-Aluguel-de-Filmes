@@ -84,6 +84,17 @@
 				</li>
 				</g:if>
 			
+				<g:if test="${seriadoInstance?.atores}">
+				<li class="fieldcontain">
+					<span id="atores-label" class="property-label"><g:message code="seriado.atores.label" default="Atores" /></span>
+					
+						<g:each in="${seriadoInstance.atores}" var="a">
+						<span class="property-value" aria-labelledby="atores-label"><g:link controller="ator" action="show" id="${a.id}">${a?.encodeAsHTML()}</g:link></span>
+						</g:each>
+					
+				</li>
+				</g:if>
+			
 				<g:if test="${seriadoInstance?.criador}">
 				<li class="fieldcontain">
 					<span id="criador-label" class="property-label"><g:message code="seriado.criador.label" default="Criador" /></span>

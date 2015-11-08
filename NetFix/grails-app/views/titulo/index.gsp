@@ -17,8 +17,6 @@
 		</div>
 		<div id="list-titulo" class="content scaffold-list" role="main">
 			<h1><g:message code="default.list.label" args="[entityName]" /></h1>
-                        <p><g:message code=" Total " /><g:message code="${tituloInstanceCount}" /></p>
-				
 			<g:if test="${flash.message}">
 				<div class="message" role="status">${flash.message}</div>
 			</g:if>
@@ -32,7 +30,7 @@
 					
 						<g:sortableColumn property="faixa_etaria" title="${message(code: 'titulo.faixa_etaria.label', default: 'Faixaetaria')}" />
 					
-						<g:sortableColumn property="ano_lancamento" title="${message(code: 'titulo.ano_lancamento.label', default: 'Ano de Lancamento')}" />
+						<g:sortableColumn property="ano_lancamento" title="${message(code: 'titulo.ano_lancamento.label', default: 'Anolancamento')}" />
 					
 						<g:sortableColumn property="avaliacao_geral" title="${message(code: 'titulo.avaliacao_geral.label', default: 'Avaliacaogeral')}" />
 					
@@ -54,12 +52,7 @@
 					
 						<td>${fieldValue(bean: tituloInstance, field: "avaliacao_geral")}</td>
 					
-						<td>
-                                                    <img src="${createLink(controller:'titulo', action:'showCapa', id:"${tituloInstance.id}")}"
-                                                     
-                                                         title="${tituloInstance.capaNome}" 
-                                                         width="60px" height="60px"/>
-                                                </td>
+						<td>${fieldValue(bean: tituloInstance, field: "capa")}</td>
 					
 					</tr>
 				</g:each>

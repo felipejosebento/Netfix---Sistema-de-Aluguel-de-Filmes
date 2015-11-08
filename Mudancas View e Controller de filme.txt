@@ -1,0 +1,56 @@
+sshow
+
+<g:if test="${tituloInstance?.capa}">
+				<li class="fieldcontain">
+					<span id="capa-label" class="property-label"><g:message code="titulo.capa.label" default="Capa" /></span>
+					
+                                                <span class="property-value" aria-labelledby="capa-label">
+                                                
+                                                    <img src="${createLink(controller:'titulo', action:'showCapa', id:"${tituloInstance.id}")}"
+                                                     
+                                                         title="${tituloInstance.capaNome}" 
+                                                         width="120px" height="120px"/>
+                                                </span>   
+				</li>
+				</g:if>
+
+controller
+
+def showCapa() {
+def tituloInstance = Titulo.get(params.id)
+response.outputStream << tituloInstance.capa // write the image to the outputstream
+response.outputStream.flush()
+}
+
+def save() {
+	def tituloInstance = new Titulo(params)
+        
+        def imageFile = request.getFile('capa')
+        
+        if(!imageFile.empty){
+            //imageFile.transferTo( new File( prodDir, imageFile.originalFilename))
+            tituloInstance.capa = imageFile.getBytes()
+            tituloInstance.capaNome = imageFile.originalFilename
+        }
+
+        if (!tituloInstance.save(flush: true)) {
+            render(view: "create", model: [tituloInstance: tituloInstance])
+            return
+        }
+
+        flash.message = message(code: 'default.created.message', args: [message(code: 'titulo.label', default: 'Titulo'), tituloInstance.id])
+        redirect(action: "show", id: tituloInstance.id)
+    }
+
+index
+
+<p><g:message code=" Total " /><g:message code="${tituloInstanceCount}" /></p>
+
+<g:sortableColumn property="capa" title="${message(code: 'titulo.capa.label', default: 'Capa')}" />
+
+<td> 
+                                                    <img src="${createLink(controller:'titulo', action:'showCapa', id:"${tituloInstance.id}")}"
+                                                     
+                                                         title="${tituloInstance.capaNome}" 
+                                                         width="60px" height="60px"/>
+                                                </td>

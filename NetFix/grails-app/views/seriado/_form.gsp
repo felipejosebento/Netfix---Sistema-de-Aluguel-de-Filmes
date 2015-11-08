@@ -47,10 +47,10 @@
 
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: seriadoInstance, field: 'capa', 'error')} required">
+<div class="fieldcontain ${hasErrors(bean: seriadoInstance, field: 'capa', 'error')} ">
 	<label for="capa">
 		<g:message code="seriado.capa.label" default="Capa" />
-		<span class="required-indicator">*</span>
+		
 	</label>
 	<input type="file" id="capa" name="capa" />
 
@@ -62,6 +62,15 @@
 		<span class="required-indicator">*</span>
 	</label>
 	<g:textArea name="sinopse" cols="40" rows="5" maxlength="300" required="" value="${seriadoInstance?.sinopse}"/>
+
+</div>
+
+<div class="fieldcontain ${hasErrors(bean: seriadoInstance, field: 'atores', 'error')} ">
+	<label for="atores">
+		<g:message code="seriado.atores.label" default="Atores" />
+		
+	</label>
+	<g:select name="atores" from="${br.ufscar.dc.Ator.list()}" multiple="multiple" optionKey="id" size="5" value="${seriadoInstance?.atores*.id}" class="many-to-many"/>
 
 </div>
 

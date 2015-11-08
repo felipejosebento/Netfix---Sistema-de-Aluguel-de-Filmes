@@ -23,20 +23,20 @@
 			</g:if>
 			<ol class="property-list episodio">
 			
-				<g:if test="${episodioInstance?.nome}">
-				<li class="fieldcontain">
-					<span id="nome-label" class="property-label"><g:message code="episodio.nome.label" default="Nome" /></span>
-					
-						<span class="property-value" aria-labelledby="nome-label"><g:fieldValue bean="${episodioInstance}" field="nome"/></span>
-					
-				</li>
-				</g:if>
-			
 				<g:if test="${episodioInstance?.sinopse}">
 				<li class="fieldcontain">
 					<span id="sinopse-label" class="property-label"><g:message code="episodio.sinopse.label" default="Sinopse" /></span>
 					
 						<span class="property-value" aria-labelledby="sinopse-label"><g:fieldValue bean="${episodioInstance}" field="sinopse"/></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${episodioInstance?.nome}">
+				<li class="fieldcontain">
+					<span id="nome-label" class="property-label"><g:message code="episodio.nome.label" default="Nome" /></span>
+					
+						<span class="property-value" aria-labelledby="nome-label"><g:fieldValue bean="${episodioInstance}" field="nome"/></span>
 					
 				</li>
 				</g:if>

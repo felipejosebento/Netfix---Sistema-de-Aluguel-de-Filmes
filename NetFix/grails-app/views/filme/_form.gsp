@@ -47,10 +47,10 @@
 
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: filmeInstance, field: 'capa', 'error')} required">
+<div class="fieldcontain ${hasErrors(bean: filmeInstance, field: 'capa', 'error')} ">
 	<label for="capa">
 		<g:message code="filme.capa.label" default="Capa" />
-		<span class="required-indicator">*</span>
+		
 	</label>
 	<input type="file" id="capa" name="capa" />
 
@@ -71,6 +71,15 @@
 		<span class="required-indicator">*</span>
 	</label>
 	<g:textField name="diretor" pattern="${filmeInstance.constraints.diretor.matches}" required="" value="${filmeInstance?.diretor}"/>
+
+</div>
+
+<div class="fieldcontain ${hasErrors(bean: filmeInstance, field: 'atores', 'error')} ">
+	<label for="atores">
+		<g:message code="filme.atores.label" default="Atores" />
+		
+	</label>
+	<g:select name="atores" from="${br.ufscar.dc.Ator.list()}" multiple="multiple" optionKey="id" size="5" value="${filmeInstance?.atores*.id}" class="many-to-many"/>
 
 </div>
 

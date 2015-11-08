@@ -34,7 +34,7 @@
 		<g:message code="titulo.ano_lancamento.label" default="Anolancamento" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:textField name="ano_lancamento" required="" value="${tituloInstance?.ano_lancamento}"/>
+	<g:textField name="ano_lancamento" pattern="${tituloInstance.constraints.ano_lancamento.matches}" required="" value="${tituloInstance?.ano_lancamento}"/>
 
 </div>
 
@@ -47,10 +47,10 @@
 
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: tituloInstance, field: 'capa', 'error')} required">
+<div class="fieldcontain ${hasErrors(bean: tituloInstance, field: 'capa', 'error')} ">
 	<label for="capa">
 		<g:message code="titulo.capa.label" default="Capa" />
-		<span class="required-indicator">*</span>
+		
 	</label>
 	<input type="file" id="capa" name="capa" />
 
@@ -62,6 +62,15 @@
 		<span class="required-indicator">*</span>
 	</label>
 	<g:textArea name="sinopse" cols="40" rows="5" maxlength="300" required="" value="${tituloInstance?.sinopse}"/>
+
+</div>
+
+<div class="fieldcontain ${hasErrors(bean: tituloInstance, field: 'atores', 'error')} ">
+	<label for="atores">
+		<g:message code="titulo.atores.label" default="Atores" />
+		
+	</label>
+	<g:select name="atores" from="${br.ufscar.dc.Ator.list()}" multiple="multiple" optionKey="id" size="5" value="${tituloInstance?.atores*.id}" class="many-to-many"/>
 
 </div>
 

@@ -2,7 +2,7 @@ package br.ufscar.dc
 
 class Titulo {
    
-    static hasmany = [atores: Ator]
+    static hasMany = [atores:Ator]
     
     static constraints = {
         nome(blank:false,size: 1..30,matches:"[a-zA-Z0-9 ]+")
@@ -24,12 +24,12 @@ class Titulo {
     
     byte[] capa
     String capaNome = "arquivo"
-    String nome
-    String sinopse
-    char avaliacao_geral
-    String faixa_etaria
-    String ano_lancamento
-    String genero
+    String nome ="teste"
+    String sinopse= "viu bruno"
+    char avaliacao_geral = '5'
+    String faixa_etaria= "livre"
+    String ano_lancamento = "2012"
+    String genero = "aventura"
     
     
   String toString () {
