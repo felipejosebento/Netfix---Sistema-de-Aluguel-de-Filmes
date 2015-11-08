@@ -29,21 +29,21 @@
 
 </div>
 
+<div class="fieldcontain ${hasErrors(bean: videoInstance, field: 'frames', 'error')} ">
+	<label for="frames">
+		<g:message code="video.frames.label" default="Frames" />
+		
+	</label>
+	<input type="file" id="frames" name="frames" />
+
+</div>
+
 <div class="fieldcontain ${hasErrors(bean: videoInstance, field: 'duracao', 'error')} required">
 	<label for="duracao">
 		<g:message code="video.duracao.label" default="Duracao" />
 		<span class="required-indicator">*</span>
 	</label>
 	<g:field name="duracao" type="number" value="${videoInstance.duracao}" required=""/>
-
-</div>
-
-<div class="fieldcontain ${hasErrors(bean: videoInstance, field: 'frames', 'error')} required">
-	<label for="frames">
-		<g:message code="video.frames.label" default="Frames" />
-		<span class="required-indicator">*</span>
-	</label>
-	<input type="file" id="frames" name="frames" />
 
 </div>
 

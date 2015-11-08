@@ -7,15 +7,16 @@ class Video {
         legenda ( inList: ["português","inglês","espanhol"])
         idioma_titulo ( inList: ["português","inglês","espanhol","nativo"])
         qualidade ( inList: ["baixo","médio","automatico","alto"])
+        frames (nullable: true)
         
     }
-    
+        
     byte[] frames
-    String legenda
-    String idioma_titulo
-    int tempo_atual
-    boolean pausePlay
-    String qualidade
-    int tempo_inicial
-    int duracao
+    String legenda = "espanhol"
+    String idioma_titulo = "espanhol"
+    int tempo_atual = 0
+    boolean pausePlay = false
+    String qualidade ="baixo" 
+    int tempo_inicial = 1
+    int duracao = 20
 }

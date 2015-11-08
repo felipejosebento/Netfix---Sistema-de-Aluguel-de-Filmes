@@ -50,18 +50,18 @@
 				</li>
 				</g:if>
 			
+				<g:if test="${videoInstance?.frames}">
+				<li class="fieldcontain">
+					<span id="frames-label" class="property-label"><g:message code="video.frames.label" default="Frames" /></span>
+					
+				</li>
+				</g:if>
+			
 				<g:if test="${videoInstance?.duracao}">
 				<li class="fieldcontain">
 					<span id="duracao-label" class="property-label"><g:message code="video.duracao.label" default="Duracao" /></span>
 					
 						<span class="property-value" aria-labelledby="duracao-label"><g:fieldValue bean="${videoInstance}" field="duracao"/></span>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${videoInstance?.frames}">
-				<li class="fieldcontain">
-					<span id="frames-label" class="property-label"><g:message code="video.frames.label" default="Frames" /></span>
 					
 				</li>
 				</g:if>

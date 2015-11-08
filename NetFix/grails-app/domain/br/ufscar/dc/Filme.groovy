@@ -3,7 +3,7 @@ package br.ufscar.dc
 class Filme extends Titulo{
 
     static constraints = {
-        diretor(blank:false,matches:"[a-zA-Z]+")
+        diretor(blank:false,matches:"[a-zA-Z ]+")
         
     }
     

@@ -52,7 +52,12 @@
 					
 						<td>${fieldValue(bean: filmeInstance, field: "avaliacao_geral")}</td>
 					
-						<td>${fieldValue(bean: filmeInstance, field: "capa")}</td>
+						<td>
+                                                    <img src="${createLink(controller:'filme', action:'showCapa', id:"${filmeInstance.id}")}"
+                                                     
+                                                         title="${filmeInstance.capaNome}" 
+                                                         width="60px" height="60px"/>
+                                                </td>
 					
 					</tr>
 				</g:each>
