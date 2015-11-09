@@ -29,6 +29,7 @@
                 <nav id="nav">
                     <ul>
                         <li class="current"><a href="http://localhost:8080/NetFix/"><h1 style="color:black">Home</a></li>
+                        <li><a href="http://localhost:8080/NetFix/Ator/index"><h1 style="color:black">Ator</a></li>
                         <li><a href="http://localhost:8080/NetFix/titulo/index"><h1 style="color:black">Titulo</a></li>
                         <li><a href="http://localhost:8080/NetFix/filme/index"><h1 style="color:black">Filme</a></li>
                         <li><a href="http://localhost:8080/NetFix/seriado/index"><h1 style="color:black">Seriado</a></li>
