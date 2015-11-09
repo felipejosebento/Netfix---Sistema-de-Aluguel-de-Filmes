@@ -24,7 +24,7 @@ class Video {
     int duracao = 20
     
     String toString () {
-        return "pausePlay"
+        return "Play"
     }
     
     

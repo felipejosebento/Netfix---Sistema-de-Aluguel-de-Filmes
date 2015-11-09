@@ -65,30 +65,21 @@
 
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: filmeInstance, field: 'diretor', 'error')} required">
-	<label for="diretor">
-		<g:message code="filme.diretor.label" default="Diretor" />
-		<span class="required-indicator">*</span>
-	</label>
-	<g:textField name="diretor" pattern="${filmeInstance.constraints.diretor.matches}" required="" value="${filmeInstance?.diretor}"/>
-
-</div>
-
-<div class="fieldcontain ${hasErrors(bean: filmeInstance, field: 'video', 'error')} required">
-	<label for="video">
-		<g:message code="filme.video.label" default="Video" />
-		<span class="required-indicator">*</span>
-	</label>
-	<g:select id="video" name="video.id" from="${br.ufscar.dc.Video.list()}" optionKey="id" required="" value="${filmeInstance?.video?.id}" class="many-to-one"/>
-
-</div>
-
 <div class="fieldcontain ${hasErrors(bean: filmeInstance, field: 'atores', 'error')} ">
 	<label for="atores">
 		<g:message code="filme.atores.label" default="Atores" />
 		
 	</label>
 	
+
+</div>
+
+<div class="fieldcontain ${hasErrors(bean: filmeInstance, field: 'diretor', 'error')} required">
+	<label for="diretor">
+		<g:message code="filme.diretor.label" default="Diretor" />
+		<span class="required-indicator">*</span>
+	</label>
+	<g:textField name="diretor" pattern="${filmeInstance.constraints.diretor.matches}" required="" value="${filmeInstance?.diretor}"/>
 
 </div>
 

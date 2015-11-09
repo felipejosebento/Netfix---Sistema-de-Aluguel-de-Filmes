@@ -1,6 +1,7 @@
 TO DO
 arrumar primary key de titulo
-Arrumar VIDEO -> baixar filme? dar URL? URL pro app ou de saite de fora? oq é o VIDEO?
+Inserir video como arquivo, dar upload, e salvar no BD nome do arquivo!
+Codigo p mostrar video em HTML
 Colocar foto no Ator
 
 DONE
