@@ -32,7 +32,7 @@ class Titulo {
     String genero = "aventura"
     
     
-  String toString () {
+  public String toString () {
         return "[" +  this.getClass().getSimpleName() + "] " + nome
     }
  

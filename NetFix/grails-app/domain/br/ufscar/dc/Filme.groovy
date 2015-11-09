@@ -7,8 +7,7 @@ class Filme extends Titulo{
         video (unique: true)
     }
     
-    
-    Video video
+    Video video = new Video()
     String diretor = "Padilha"
     
 }

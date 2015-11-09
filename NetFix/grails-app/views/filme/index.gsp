@@ -17,8 +17,6 @@
 		</div>
 		<div id="list-filme" class="content scaffold-list" role="main">
 			<h1><g:message code="default.list.label" args="[entityName]" /></h1>
-                        <p><g:message code=" Total " /><g:message code="${filmeInstanceCount}" /></p>
-
 			<g:if test="${flash.message}">
 				<div class="message" role="status">${flash.message}</div>
 			</g:if>
@@ -54,12 +52,8 @@
 					
 						<td>${fieldValue(bean: filmeInstance, field: "avaliacao_geral")}</td>
 					
-						<td> 
-                                                    <img src="${createLink(controller:'filme', action:'showCapa', id:"${filmeInstance.id}")}"
-                                                     
-                                                         title="${filmeInstance.capaNome}" 
-                                                         width="60px" height="60px"/>
-                                                </td>
+						<td>${fieldValue(bean: filmeInstance, field: "capa")}</td>
+					
 					</tr>
 				</g:each>
 				</tbody>

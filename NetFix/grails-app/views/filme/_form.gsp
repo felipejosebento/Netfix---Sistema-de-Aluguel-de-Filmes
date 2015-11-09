@@ -74,21 +74,21 @@
 
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: filmeInstance, field: 'atores', 'error')} ">
-	<label for="atores">
-		<g:message code="filme.atores.label" default="Atores" />
-		
-	</label>
-	<g:select name="atores" from="${br.ufscar.dc.Ator.list()}" multiple="multiple" optionKey="id" size="5" value="${filmeInstance?.atores*.id}" class="many-to-many"/>
-
-</div>
-
 <div class="fieldcontain ${hasErrors(bean: filmeInstance, field: 'video', 'error')} required">
 	<label for="video">
 		<g:message code="filme.video.label" default="Video" />
 		<span class="required-indicator">*</span>
 	</label>
 	<g:select id="video" name="video.id" from="${br.ufscar.dc.Video.list()}" optionKey="id" required="" value="${filmeInstance?.video?.id}" class="many-to-one"/>
+
+</div>
+
+<div class="fieldcontain ${hasErrors(bean: filmeInstance, field: 'atores', 'error')} ">
+	<label for="atores">
+		<g:message code="filme.atores.label" default="Atores" />
+		
+	</label>
+	
 
 </div>
 

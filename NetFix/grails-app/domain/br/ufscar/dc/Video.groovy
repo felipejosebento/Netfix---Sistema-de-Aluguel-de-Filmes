@@ -22,4 +22,12 @@ class Video {
     String qualidade ="baixo" 
     int tempo_inicial = 1
     int duracao = 20
+    
+    String toString () {
+        return "pausePlay"
+    }
+    
+    
+    
+
 }

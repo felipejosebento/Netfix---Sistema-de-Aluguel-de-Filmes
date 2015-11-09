@@ -18,11 +18,6 @@ class FilmeController {
     def show(Filme filmeInstance) {
         respond filmeInstance
     }
-    def showCapa() {
-def filmeInstance = Filme.get(params.id)
-response.outputStream << filmeInstance.capa // write the image to the outputstream
-response.outputStream.flush()
-}
 
     def create() {
         respond new Filme(params)
