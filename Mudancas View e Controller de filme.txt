@@ -1,14 +1,14 @@
 sshow
 
-<g:if test="${tituloInstance?.capa}">
+<g:if test="${filmeInstance?.capa}">
 				<li class="fieldcontain">
-					<span id="capa-label" class="property-label"><g:message code="titulo.capa.label" default="Capa" /></span>
+					<span id="capa-label" class="property-label"><g:message code="filme.capa.label" default="Capa" /></span>
 					
                                                 <span class="property-value" aria-labelledby="capa-label">
-                                                
-                                                    <img src="${createLink(controller:'titulo', action:'showCapa', id:"${tituloInstance.id}")}"
+                                                 
+                                                    <img src="${createLink(controller:'filme', action:'showCapa', id:"${filmeInstance.id}")}"
                                                      
-                                                         title="${tituloInstance.capaNome}" 
+                                                         title="${filmeInstance.capaNome}" 
                                                          width="120px" height="120px"/>
                                                 </span>   
 				</li>
@@ -17,24 +17,24 @@ sshow
 controller
 
 def showCapa() {
-def tituloInstance = Titulo.get(params.id)
-response.outputStream << tituloInstance.capa // write the image to the outputstream
+def filmeInstance = Filme.get(params.id)
+response.outputStream << filmeInstance.capa // write the image to the outputstream
 response.outputStream.flush()
 }
 
 def save() {
-	def tituloInstance = new Titulo(params)
+	def filmeInstance = new Filme(params)
         
         def imageFile = request.getFile('capa')
         
         if(!imageFile.empty){
             //imageFile.transferTo( new File( prodDir, imageFile.originalFilename))
-            tituloInstance.capa = imageFile.getBytes()
-            tituloInstance.capaNome = imageFile.originalFilename
+            filmeInstance.capa = imageFile.getBytes()
+            filmeInstance.capaNome = imageFile.originalFilename
         }
 
-        if (!tituloInstance.save(flush: true)) {
-            render(view: "create", model: [tituloInstance: tituloInstance])
+        if (!filmeInstance.save(flush: true)) {
+            render(view: "create", model: [filmeInstance: filmeInstance])
             return
         }
 
@@ -44,13 +44,14 @@ def save() {
 
 index
 
-<p><g:message code=" Total " /><g:message code="${tituloInstanceCount}" /></p>
+<p><g:message code=" Total " /><g:message code="${filmeInstanceCount}" /></p>
 
-<g:sortableColumn property="capa" title="${message(code: 'titulo.capa.label', default: 'Capa')}" />
+<g:sortableColumn property="capa" title="${message(code: 'filme.capa.label', default: 'Capa')}" />
 
 <td> 
-                                                    <img src="${createLink(controller:'titulo', action:'showCapa', id:"${tituloInstance.id}")}"
+                                                    <img src="${createLink(controller:'filme', action:'showCapa', id:"${filmeInstance.id}")}"
                                                      
-                                                         title="${tituloInstance.capaNome}" 
+                                                         title="${filmeInstance.capaNome}" 
                                                          width="60px" height="60px"/>
                                                 </td>
+					

@@ -72,6 +72,13 @@
 				<li class="fieldcontain">
 					<span id="capa-label" class="property-label"><g:message code="filme.capa.label" default="Capa" /></span>
 					
+                                                <span class="property-value" aria-labelledby="capa-label">
+                                                 
+                                                    <img src="${createLink(controller:'filme', action:'showCapa', id:"${filmeInstance.id}")}"
+                                                     
+                                                         title="${filmeInstance.capaNome}" 
+                                                         width="120px" height="120px"/>
+                                                </span>   
 				</li>
 				</g:if>
 			
