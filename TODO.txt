@@ -4,9 +4,10 @@ TO DO
 -Codigo p mostrar video em HTML
 -Colocar foto no Ator
 -Como adicionar frames do Video(arquivo) pelo BootStrap? editar video e colocar frames por la
--Filme/Episodio has many Video (Filme com ou sem legenda, dublado legendado, 1 filme varios videos)
+
 -Baixar videos, ver qual formato certo!!
 
 DONE
+-Filme/Episodio has many Video (Filme com ou sem legenda, dublado legendado, 1 filme varios videos)
 Video e Titulo relacao 1 pra 1 !!!
 Deletar Titulo deleta ATOR?

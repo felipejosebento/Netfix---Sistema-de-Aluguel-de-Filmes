@@ -41,11 +41,22 @@
 				</li>
 				</g:if>
 			
+				<g:if test="${episodioInstance?.seriado}">
+				<li class="fieldcontain">
+					<span id="seriado-label" class="property-label"><g:message code="episodio.seriado.label" default="Seriado" /></span>
+					
+						<span class="property-value" aria-labelledby="seriado-label"><g:link controller="seriado" action="show" id="${episodioInstance?.seriado?.id}">${episodioInstance?.seriado?.encodeAsHTML()}</g:link></span>
+					
+				</li>
+				</g:if>
+			
 				<g:if test="${episodioInstance?.video}">
 				<li class="fieldcontain">
 					<span id="video-label" class="property-label"><g:message code="episodio.video.label" default="Video" /></span>
 					
-						<span class="property-value" aria-labelledby="video-label"><g:link controller="video" action="show" id="${episodioInstance?.video?.id}">${episodioInstance?.video?.encodeAsHTML()}</g:link></span>
+						<g:each in="${episodioInstance.video}" var="v">
+						<span class="property-value" aria-labelledby="video-label"><g:link controller="video" action="show" id="${v.id}">${v?.encodeAsHTML()}</g:link></span>
+						</g:each>
 					
 				</li>
 				</g:if>

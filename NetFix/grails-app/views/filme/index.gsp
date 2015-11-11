@@ -58,7 +58,6 @@
                                                          title="${filmeInstance.capaNome}" 
                                                          width="60px" height="60px"/>
                                                 </td>
-					
 					</tr>
 				</g:each>
 				</tbody>

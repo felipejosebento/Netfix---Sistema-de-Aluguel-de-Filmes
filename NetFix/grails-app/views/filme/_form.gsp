@@ -83,3 +83,21 @@
 
 </div>
 
+<div class="fieldcontain ${hasErrors(bean: filmeInstance, field: 'video', 'error')} ">
+	<label for="video">
+		<g:message code="filme.video.label" default="Video" />
+		
+	</label>
+	
+<ul class="one-to-many">
+<g:each in="${filmeInstance?.video?}" var="v">
+    <li><g:link controller="video" action="show" id="${v.id}">${v?.encodeAsHTML()}</g:link></li>
+</g:each>
+<li class="add">
+<g:link controller="video" action="create" params="['filme.id': filmeInstance?.id]">${message(code: 'default.add.label', args: [message(code: 'video.label', default: 'Video')])}</g:link>
+</li>
+</ul>
+
+
+</div>
+

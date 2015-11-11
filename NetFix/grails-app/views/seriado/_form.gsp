@@ -70,7 +70,7 @@
 		<g:message code="seriado.atores.label" default="Atores" />
 		
 	</label>
-	<g:select name="atores" from="${br.ufscar.dc.Ator.list()}" multiple="multiple" optionKey="id" size="5" value="${seriadoInstance?.atores*.id}" class="many-to-many"/>
+	
 
 </div>
 
@@ -88,7 +88,16 @@
 		<g:message code="seriado.episodios.label" default="Episodios" />
 		
 	</label>
-	<g:select name="episodios" from="${br.ufscar.dc.Episodio.list()}" multiple="multiple" optionKey="id" size="5" value="${seriadoInstance?.episodios*.id}" class="many-to-many"/>
+	
+<ul class="one-to-many">
+<g:each in="${seriadoInstance?.episodios?}" var="e">
+    <li><g:link controller="episodio" action="show" id="${e.id}">${e?.encodeAsHTML()}</g:link></li>
+</g:each>
+<li class="add">
+<g:link controller="episodio" action="create" params="['seriado.id': seriadoInstance?.id]">${message(code: 'default.add.label', args: [message(code: 'episodio.label', default: 'Episodio')])}</g:link>
+</li>
+</ul>
+
 
 </div>
 

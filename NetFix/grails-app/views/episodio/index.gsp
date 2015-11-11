@@ -28,7 +28,7 @@
 					
 						<g:sortableColumn property="nome" title="${message(code: 'episodio.nome.label', default: 'Nome')}" />
 					
-						<th><g:message code="episodio.video.label" default="Video" /></th>
+						<th><g:message code="episodio.seriado.label" default="Seriado" /></th>
 					
 					</tr>
 				</thead>
@@ -40,7 +40,7 @@
 					
 						<td>${fieldValue(bean: episodioInstance, field: "nome")}</td>
 					
-						<td>${fieldValue(bean: episodioInstance, field: "video")}</td>
+						<td>${fieldValue(bean: episodioInstance, field: "seriado")}</td>
 					
 					</tr>
 				</g:each>

@@ -5,6 +5,8 @@ class Video {
     static belongsTo = [filme:Filme,episodio:Episodio]
     static constraints = {
         filme(nullable: true)
+        filme(maxSize: 0, validator: {field, inst -> inst.episodio || field})
+        episodio(maxSize: 0, validator: {field, inst -> inst.filme || field})
         episodio(nullable: true, validator: {field, inst -> inst.filme || field})
     
         legenda ( inList: ["português","inglês","espanhol"])

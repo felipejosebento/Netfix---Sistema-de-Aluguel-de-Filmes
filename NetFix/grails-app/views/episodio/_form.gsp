@@ -20,12 +20,30 @@
 
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: episodioInstance, field: 'video', 'error')} required">
-	<label for="video">
-		<g:message code="episodio.video.label" default="Video" />
+<div class="fieldcontain ${hasErrors(bean: episodioInstance, field: 'seriado', 'error')} required">
+	<label for="seriado">
+		<g:message code="episodio.seriado.label" default="Seriado" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:select id="video" name="video.id" from="${br.ufscar.dc.Video.list()}" optionKey="id" required="" value="${episodioInstance?.video?.id}" class="many-to-one"/>
+	<g:select id="seriado" name="seriado.id" from="${br.ufscar.dc.Seriado.list()}" optionKey="id" required="" value="${episodioInstance?.seriado?.id}" class="many-to-one"/>
+
+</div>
+
+<div class="fieldcontain ${hasErrors(bean: episodioInstance, field: 'video', 'error')} ">
+	<label for="video">
+		<g:message code="episodio.video.label" default="Video" />
+		
+	</label>
+	
+<ul class="one-to-many">
+<g:each in="${episodioInstance?.video?}" var="v">
+    <li><g:link controller="video" action="show" id="${v.id}">${v?.encodeAsHTML()}</g:link></li>
+</g:each>
+<li class="add">
+<g:link controller="video" action="create" params="['episodio.id': episodioInstance?.id]">${message(code: 'default.add.label', args: [message(code: 'video.label', default: 'Video')])}</g:link>
+</li>
+</ul>
+
 
 </div>
 

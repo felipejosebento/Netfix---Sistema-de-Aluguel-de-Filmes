@@ -3,12 +3,13 @@ package br.ufscar.dc
 class Episodio {
     
     //static hasOne = [vEpisodio:Video]
-    static belongsTo=Seriado
+    static belongsTo=[seriado:Seriado]
+    static hasMany = [video:Video]
     static constraints = {
+        //Seriado(unique:true)
         sinopse(blank:false,size: 1..300,matches:"[a-zA-Z0-9 ]+")
     }
     
-    Video video;
-    String nome
-    String sinopse
+    String nome = "EpTeste"
+    String sinopse = "viu episodio"
 }
