@@ -68,10 +68,15 @@
 				</li>
 				</g:if>
 			
-				<g:if test="${videoInstance?.frames}">
+				<g:if test="${videoInstance?.source}">
 				<li class="fieldcontain">
-					<span id="frames-label" class="property-label"><g:message code="video.frames.label" default="Frames" /></span>
+					<span id="source-label" class="property-label"><g:message code="video.source.label" default="Source" /></span>
 					
+						<span class="property-value" aria-labelledby="source-label">
+                                                     <video width="320" height="240" controls>
+                                                         <source src="${createLinkTo(dir:'video/'+ videoInstance.id, file:''+videoInstance.source)}" 
+                                                                    type="video/mp4">
+                                                     </video>
 				</li>
 				</g:if>
 			

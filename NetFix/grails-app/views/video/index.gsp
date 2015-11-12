@@ -34,7 +34,7 @@
 					
 						<g:sortableColumn property="qualidade" title="${message(code: 'video.qualidade.label', default: 'Qualidade')}" />
 					
-						<g:sortableColumn property="frames" title="${message(code: 'video.frames.label', default: 'Frames')}" />
+						<!--g:sortableColumn property="source" title="${message(code: 'video.source.label', default: 'Source')}" /-->
 					
 					</tr>
 				</thead>
@@ -52,7 +52,7 @@
 					
 						<td>${fieldValue(bean: videoInstance, field: "qualidade")}</td>
 					
-						<td>${fieldValue(bean: videoInstance, field: "frames")}</td>
+						<!--td>${fieldValue(bean: videoInstance, field: "source")}</td-->
 					
 					</tr>
 				</g:each>

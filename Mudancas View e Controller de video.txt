@@ -1,0 +1,54 @@
+CREATE
+
+<g:form url="[resource:videoInstance, action:'save']" enctype="multipart/form-data">
+
+SHOW
+
+<span class="property-value" aria-labelledby="source-label">
+                                                     <video width="320" height="240" controls>
+                                                         <source src="${createLinkTo(dir:'video/'+ videoInstance.id, file:''+videoInstance.source)}" 
+                                                                    type="video/mp4">
+                                                     </video>
+
+FORM
+
+<input type = "file" name="video"/>
+
+controller
+
+def save() {
+        def videoInstance = new Video(params)
+        
+        
+        def videoFile = request.getFile('video')
+        
+        if(!videoFile.empty)
+            videoInstance.source = videoFile.originalFilename
+        
+        if (!videoInstance.save(flush: true)) {
+            render(view: "create", model: [videoInstance: videoInstance])
+            return
+        }
+        
+        def webRootDir = servletContext.getRealPath("/")
+        def videoDir = new File(webRootDir, "/video/${videoInstance.id}")
+        videoDir.mkdirs()
+        
+        if(!videoFile.empty){
+            videoFile.transferTo( new File( videoDir, videoFile.originalFilename))
+        }
+        
+        flash.message = message(code: 'default.created.message', args: [message(code: 'video.label', default: 'Video'), videoInstance.id])
+        redirect(action: "show", id: videoInstance.id)
+        
+    }
+
+index
+
+<p><g:message code=" Total " /><g:message code="${filmeInstanceCount}" /></p>
+
+<!--g:sortableColumn property="source" title="${message(code: 'video.source.label', default: 'Source')}" /-->
+					
+
+<!--td>${fieldValue(bean: videoInstance, field: "source")}</td-->
+							

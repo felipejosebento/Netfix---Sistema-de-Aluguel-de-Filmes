@@ -27,7 +27,7 @@
 				</g:eachError>
 			</ul>
 			</g:hasErrors>
-			<g:form url="[resource:videoInstance, action:'update']" method="PUT"  enctype="multipart/form-data">
+			<g:form url="[resource:videoInstance, action:'update']" method="PUT" >
 				<g:hiddenField name="version" value="${videoInstance?.version}" />
 				<fieldset class="form">
 					<g:render template="form"/>

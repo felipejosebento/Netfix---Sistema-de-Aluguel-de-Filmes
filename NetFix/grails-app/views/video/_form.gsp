@@ -47,12 +47,12 @@
 
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: videoInstance, field: 'frames', 'error')} ">
-	<label for="frames">
-		<g:message code="video.frames.label" default="Frames" />
+<div class="fieldcontain ${hasErrors(bean: videoInstance, field: 'source', 'error')} ">
+	<label for="source">
+		<g:message code="video.source.label" default="Source" />
 		
 	</label>
-	<input type="file" id="frames" name="frames" />
+	<input type = "file" name="video"/>
 
 </div>
 

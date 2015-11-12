@@ -24,26 +24,31 @@ class VideoController {
     }
 
     @Transactional
-    def save(Video videoInstance) {
-        if (videoInstance == null) {
-            notFound()
+    def save() {
+        def videoInstance = new Video(params)
+        
+        
+        def videoFile = request.getFile('video')
+        
+        if(!videoFile.empty)
+            videoInstance.source = videoFile.originalFilename
+        
+        if (!videoInstance.save(flush: true)) {
+            render(view: "create", model: [videoInstance: videoInstance])
             return
         }
-
-        if (videoInstance.hasErrors()) {
-            respond videoInstance.errors, view:'create'
-            return
+        
+        def webRootDir = servletContext.getRealPath("/")
+        def videoDir = new File(webRootDir, "/video/${videoInstance.id}")
+        videoDir.mkdirs()
+        
+        if(!videoFile.empty){
+            videoFile.transferTo( new File( videoDir, videoFile.originalFilename))
         }
-
-        videoInstance.save flush:true
-
-        request.withFormat {
-            form multipartForm {
-                flash.message = message(code: 'default.created.message', args: [message(code: 'video.label', default: 'Video'), videoInstance.id])
-                redirect videoInstance
-            }
-            '*' { respond videoInstance, [status: CREATED] }
-        }
+        
+        flash.message = message(code: 'default.created.message', args: [message(code: 'video.label', default: 'Video'), videoInstance.id])
+        redirect(action: "show", id: videoInstance.id)
+        
     }
 
     def edit(Video videoInstance) {
