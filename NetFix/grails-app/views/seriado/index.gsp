@@ -52,8 +52,12 @@
 					
 						<td>${fieldValue(bean: seriadoInstance, field: "avaliacao_geral")}</td>
 					
-						<td>${fieldValue(bean: seriadoInstance, field: "capa")}</td>
-					
+						<td> 
+                                                    <img src="${createLink(controller:'seriado', action:'showCapa', id:"${seriadoInstance.id}")}"
+                                                     
+                                                         title="${seriadoInstance.capaNome}" 
+                                                         width="60px" height="60px"/>
+                                                </td>	
 					</tr>
 				</g:each>
 				</tbody>

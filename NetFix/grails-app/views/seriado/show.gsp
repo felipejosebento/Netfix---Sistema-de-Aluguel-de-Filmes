@@ -72,6 +72,13 @@
 				<li class="fieldcontain">
 					<span id="capa-label" class="property-label"><g:message code="seriado.capa.label" default="Capa" /></span>
 					
+                                                <span class="property-value" aria-labelledby="capa-label">
+                                                 
+                                                    <img src="${createLink(controller:'seriado', action:'showCapa', id:"${seriadoInstance.id}")}"
+                                                     
+                                                         title="${seriadoInstance.capaNome}" 
+                                                         width="120px" height="120px"/>
+                                                </span>   
 				</li>
 				</g:if>
 			

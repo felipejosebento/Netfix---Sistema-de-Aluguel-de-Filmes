@@ -1,0 +1,57 @@
+sshow
+
+<g:if test="${seriadoInstance?.capa}">
+				<li class="fieldcontain">
+					<span id="capa-label" class="property-label"><g:message code="seriado.capa.label" default="Capa" /></span>
+					
+                                                <span class="property-value" aria-labelledby="capa-label">
+                                                 
+                                                    <img src="${createLink(controller:'seriado', action:'showCapa', id:"${seriadoInstance.id}")}"
+                                                     
+                                                         title="${seriadoInstance.capaNome}" 
+                                                         width="120px" height="120px"/>
+                                                </span>   
+				</li>
+				</g:if>
+
+controller
+
+def showCapa() {
+def seriadoInstance = Seriado.get(params.id)
+response.outputStream << seriadoInstance.capa // write the image to the outputstream
+response.outputStream.flush()
+}
+
+def save() {
+	def seriadoInstance = new Seriado(params)
+        
+        def imageFile = request.getFile('capa')
+        
+        if(!imageFile.empty){
+            //imageFile.transferTo( new File( prodDir, imageFile.originalFilename))
+            seriadoInstance.capa = imageFile.getBytes()
+            seriadoInstance.capaNome = imageFile.originalFilename
+        }
+
+        if (!seriadoInstance.save(flush: true)) {
+            render(view: "create", model: [seriadoInstance: seriadoInstance])
+            return
+        }
+
+        flash.message = message(code: 'default.created.message', args: [message(code: 'seriado.label', default: 'Seriado'), seriadoInstance.id])
+        redirect(action: "show", id: seriadoInstance.id)
+    }
+
+index
+
+<p><g:message code=" Total " /><g:message code="${seriadoInstanceCount}" /></p>
+
+<g:sortableColumn property="capa" title="${message(code: 'seriado.capa.label', default: 'Capa')}" />
+					
+
+<td> 
+                                                    <img src="${createLink(controller:'seriado', action:'showCapa', id:"${seriadoInstance.id}")}"
+                                                     
+                                                         title="${seriadoInstance.capaNome}" 
+                                                         width="60px" height="60px"/>
+                                                </td>				

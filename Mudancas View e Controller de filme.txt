@@ -38,8 +38,8 @@ def save() {
             return
         }
 
-        flash.message = message(code: 'default.created.message', args: [message(code: 'titulo.label', default: 'Titulo'), tituloInstance.id])
-        redirect(action: "show", id: tituloInstance.id)
+        flash.message = message(code: 'default.created.message', args: [message(code: 'filme.label', default: 'Filme'), filmeInstance.id])
+        redirect(action: "show", id: filmeInstance.id)
     }
 
 index

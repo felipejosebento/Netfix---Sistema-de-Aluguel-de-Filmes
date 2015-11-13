@@ -6,6 +6,11 @@ class Seriado extends Titulo{
     
     static constraints = {
     }
-    String criador
-    int temporadas
+    String criador = "John"
+    int temporadas = 4
+    
+    public String toString () {
+        return "[" +  this.getClass().getSimpleName() + "] " + nome
+    }
+    
 }

@@ -22,29 +22,35 @@ class SeriadoController {
     def create() {
         respond new Seriado(params)
     }
-
+    def showCapa() {
+def seriadoInstance = Seriado.get(params.id)
+response.outputStream << seriadoInstance.capa // write the image to the outputstream
+response.outputStream.flush()
+}
+    
     @Transactional
-    def save(Seriado seriadoInstance) {
-        if (seriadoInstance == null) {
-            notFound()
+
+
+def save() {
+	def seriadoInstance = new Seriado(params)
+        
+        def imageFile = request.getFile('capa')
+        
+        if(!imageFile.empty){
+            //imageFile.transferTo( new File( prodDir, imageFile.originalFilename))
+            seriadoInstance.capa = imageFile.getBytes()
+            seriadoInstance.capaNome = imageFile.originalFilename
+        }
+
+        if (!seriadoInstance.save(flush: true)) {
+            render(view: "create", model: [seriadoInstance: seriadoInstance])
             return
         }
 
-        if (seriadoInstance.hasErrors()) {
-            respond seriadoInstance.errors, view:'create'
-            return
-        }
-
-        seriadoInstance.save flush:true
-
-        request.withFormat {
-            form multipartForm {
-                flash.message = message(code: 'default.created.message', args: [message(code: 'seriado.label', default: 'Seriado'), seriadoInstance.id])
-                redirect seriadoInstance
-            }
-            '*' { respond seriadoInstance, [status: CREATED] }
-        }
+        flash.message = message(code: 'default.created.message', args: [message(code: 'seriado.label', default: 'Seriado'), seriadoInstance.id])
+        redirect(action: "show", id: seriadoInstance.id)
     }
+
 
     def edit(Seriado seriadoInstance) {
         respond seriadoInstance

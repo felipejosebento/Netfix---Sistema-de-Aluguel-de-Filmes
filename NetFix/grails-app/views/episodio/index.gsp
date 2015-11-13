@@ -24,9 +24,11 @@
 			<thead>
 					<tr>
 					
-						<g:sortableColumn property="sinopse" title="${message(code: 'episodio.sinopse.label', default: 'Sinopse')}" />
-					
 						<g:sortableColumn property="nome" title="${message(code: 'episodio.nome.label', default: 'Nome')}" />
+					
+						<g:sortableColumn property="temporada" title="${message(code: 'episodio.temporada.label', default: 'Temporada')}" />
+					
+						<g:sortableColumn property="sinopse" title="${message(code: 'episodio.sinopse.label', default: 'Sinopse')}" />
 					
 						<th><g:message code="episodio.seriado.label" default="Seriado" /></th>
 					
@@ -36,9 +38,11 @@
 				<g:each in="${episodioInstanceList}" status="i" var="episodioInstance">
 					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
 					
-						<td><g:link action="show" id="${episodioInstance.id}">${fieldValue(bean: episodioInstance, field: "sinopse")}</g:link></td>
+						<td><g:link action="show" id="${episodioInstance.id}">${fieldValue(bean: episodioInstance, field: "nome")}</g:link></td>
 					
-						<td>${fieldValue(bean: episodioInstance, field: "nome")}</td>
+						<td>${fieldValue(bean: episodioInstance, field: "temporada")}</td>
+					
+						<td>${fieldValue(bean: episodioInstance, field: "sinopse")}</td>
 					
 						<td>${fieldValue(bean: episodioInstance, field: "seriado")}</td>
 					
