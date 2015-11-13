@@ -37,10 +37,17 @@ class BootStrap {
         // org.apache.commons.io.IOUtils.toByteArray()-> converte arquivo em bytes
         //this.class.classLoader.getResourceAsStream()-> le arquivo como InputStream
         
-        new Filme(nome:"Senhor e Senhor Smith" ,sinopse:"um pacato casal com um segredo imponente",avaliacao_geral: '4',faixa_etaria: "livre",ano_lancamento:"2013",
+        new Filme(nome:"Senhor e Senhor Smith" ,sinopse:"um pacato casal com um segredo imponente",
+            avaliacao_geral: '4',faixa_etaria: "livre",ano_lancamento:"2013",
             genero:"aventura",diretor:"ramirez",
             capa: org.apache.commons.io.IOUtils.toByteArray(this.class.classLoader.getResourceAsStream('data/4.jpg')))
         .addToAtores(brad).addToAtores(angelina).addToVideo(trailer2).save()
+        
+        new Filme(nome:"Dorimindo com o Inimigo", sinopse:"Uma esposca espancada escapa do marido fingindo a própria morte e começa uma vida nova com uma nova identidade, até que o marido volta a encontra-la", 
+            avaliacao_geral: '4', faixa_etaria:"14", ano_lancamento:"2011", genero:"Suspense, Suspense sobre crimes, Suspenses psicológicos", 
+            diretor:"bruno williams", 
+            capa: org.apache.commons.io.IOUtils.toByteArray(this.class.classLoader.getResourceAsStream('data/4.jpg'))).save()
+
     }
     def destroy = {
     }
