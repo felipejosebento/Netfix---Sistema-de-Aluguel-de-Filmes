@@ -31,5 +31,9 @@ class Titulo {
     String faixa_etaria= "livre"
     String ano_lancamento = "2012"
     String genero = "aventura"
+    
+    public String toString () {
+        return "[" +  this.getClass().getSimpleName() + "] " + nome
+    }
  
 }

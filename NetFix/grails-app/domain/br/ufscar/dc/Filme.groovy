@@ -12,8 +12,5 @@ class Filme extends Titulo{
     String diretor = "Padilha"
     
         
-  public String toString () {
-        return "[" +  this.getClass().getSimpleName() + "] " + nome
-    }
-    
+  
 }

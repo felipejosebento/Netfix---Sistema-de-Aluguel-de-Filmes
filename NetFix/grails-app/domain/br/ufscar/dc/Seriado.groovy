@@ -9,8 +9,6 @@ class Seriado extends Titulo{
     String criador = "John"
     int temporadas = 4
     
-    public String toString () {
-        return "[" +  this.getClass().getSimpleName() + "] " + nome
-    }
+    
     
 }
