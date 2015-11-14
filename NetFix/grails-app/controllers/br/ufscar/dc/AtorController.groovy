@@ -28,7 +28,6 @@ class AtorController {
     def save() {
         def atorInstance = new Ator(params)
         
-        
         def imageFile = request.getFile('imagem')
         
         if(!imageFile.empty)
@@ -52,54 +51,57 @@ class AtorController {
         
     }
 
-    def edit(Ator atorInstance) {
-        respond atorInstance
+    def edit(long id) {
+        def atorInstance = Ator.get(id)
+        if (!atorInstance) {
+            flash.message = message(code: 'default.not.found.message', args: [message(code: 'ator.label', default: 'Ator'), id])
+            redirect(action: "list")
+            return
+        }
+
+        [atorInstance: atorInstance]
     }
 
     @Transactional
     def update(Long id,Long version) {
-      def videoInstance = Video.get(id)
-        if (!videoInstance) {
-            flash.message = message(code: 'default.not.found.message', args: 
-[message(code: 'video.label', default: 'Video'), id])
+      def atorInstance = Ator.get(id)
+        if (!atorInstance) {
+            flash.message = message(code: 'default.not.found.message', args: [message(code: 'ator.label', default: 'Ator'), id])
             redirect(action: "list")
             return
         }
 
         if (version != null) {
-            if (videoInstance.version > version) {
-                videoInstance.errors.rejectValue("version", 
-"default.optimistic.locking.failure",
-                    [message(code: 'video.label', default: 'Video')] as Object[],
-                          "Another user has updated this Video while you were 
-editing")
-                render(view: "edit", model: [videoInstance: videoInstance])
+            if (atorInstance.version > version) {
+                atorInstance.errors.rejectValue("version", "default.optimistic.locking.failure",
+                    [message(code: 'ator.label', default: 'Ator')] as Object[],
+                          "Another user has updated this Ator while you were editing")
+                render(view: "edit", model: [atorInstance: atorInstance])
                 return
             }
         }
         
         
-        def videoFile = request.getFile('video')
+        def imageFile = request.getFile('imagem')
         
-        if(!videoFile.empty)
-            videoInstance.source = videoFile.originalFilename
+        if(!imageFile.empty)
+            atorInstance.foto = imageFile.originalFilename
         
-        if (!videoInstance.save(flush: true)) {
-            render(view: "create", model: [videoInstance: videoInstance])
+        if (!atorInstance.save(flush: true)) {
+            render(view: "create", model: [atorInstance: atorInstance])
             return
         }
         
         def webRootDir = servletContext.getRealPath("/")
-        def videoDir = new File(webRootDir, "/video/${videoInstance.id}")
-        videoDir.mkdirs()
+        def imageDir = new File(webRootDir, "/ator/${atorInstance.id}")
+        imageDir.mkdirs()
         
-        if(!videoFile.empty){
-            videoFile.transferTo( new File( videoDir, videoFile.originalFilename))
+        if(!imageFile.empty){
+            imageFile.transferTo( new File( imageDir, imageFile.originalFilename))
         }
         
-        flash.message = message(code: 'default.created.message', args: [message
-(code: 'video.label', default: 'Video'), videoInstance.id])
-        redirect(action: "show", id: videoInstance.id)
+        flash.message = message(code: 'default.created.message', args: [message(code: 'ator.label', default: 'Ator'), atorInstance.id])
+        redirect(action: "show", id: atorInstance.id)
         
     }
 
