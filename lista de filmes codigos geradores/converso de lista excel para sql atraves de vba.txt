@@ -1,0 +1,20 @@
+Sub gerador_de_sql()
+    
+    Dim i As Integer
+    For i = 2 To 143
+        Range("k" & i).Value2 = "new Filme(nome:" & Chr(34) & Range("B" & i).Value & Chr(34) & ",sinopse:" & Chr(34) & Range("C" & i).Value & Chr(34) & ",avaliacao_geral:" & Chr(34) & Range("D" & i).Value & Chr(34) & ",faixa_etaria:" & Chr(34) & Range("E" & i).Value & Chr(34) & ",ano_lancamento:" & Chr(34) & Range("F" & i).Value & Chr(34) & ",genero:" & Chr(34) & Range("G" & i).Value & Chr(34) & ",diretor:" & Chr(34) & Range("H" & i).Value & Chr(34) & ",capa: org.apache.commons.io.IOUtils.toByteArray(this.class.classLoader.getResourceAsStream('data/4.jpg'))).addToAtores(" & Chr(34) & Range("I" & i).Value & Chr(34) & ").addToVideo().save()"
+        
+    Next i
+    
+End Sub
+
+Sub sql_final()
+    
+    Dim i As Integer
+    For i = 2 To 143
+        codigo = codigo & Chr(13) & Chr(13) & Chr(13) & Range("K" & i).Value
+    Next i
+        Range("K150").Value2 = codigo
+End Sub
+
+        

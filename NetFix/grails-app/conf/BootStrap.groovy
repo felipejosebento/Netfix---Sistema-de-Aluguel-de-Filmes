@@ -41,6 +41,8 @@ class BootStrap {
             genero:"aventura",diretor:"ramirez",
             capa: org.apache.commons.io.IOUtils.toByteArray(this.class.classLoader.getResourceAsStream('data/4.jpg')))
         .addToAtores(brad).addToAtores(angelina).addToVideo(trailer2).save()
+        
+        
     }
     def destroy = {
     }
