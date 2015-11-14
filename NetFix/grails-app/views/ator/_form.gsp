@@ -11,6 +11,15 @@
 
 </div>
 
+<div class="fieldcontain ${hasErrors(bean: atorInstance, field: 'foto', 'error')} ">
+	<label for="foto">
+		<g:message code="ator.foto.label" default="Foto" />
+		
+	</label>
+	<input type = "file" name="imagem"/>
+
+</div>
+
 <div class="fieldcontain ${hasErrors(bean: atorInstance, field: 'titulos', 'error')} ">
 	<label for="titulos">
 		<g:message code="ator.titulos.label" default="Titulos" />

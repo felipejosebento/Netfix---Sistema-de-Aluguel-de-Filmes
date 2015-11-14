@@ -32,6 +32,19 @@
 				</li>
 				</g:if>
 			
+				<g:if test="${atorInstance?.foto}">
+				<li class="fieldcontain">
+					<span id="foto-label" class="property-label"><g:message code="ator.foto.label" default="Foto" /></span>
+					
+						<span class="property-value" aria-labelledby="foto-label">
+                                                    <img src="${createLinkTo(dir:'ator/'+ atorInstance.id, file:''+atorInstance.foto)}"
+                                                            alt="${atorInstance.foto}"
+                                                            title="${atorInstance.foto}" 
+                                                            width="120px" height="120px"/></span>
+					
+				</li>
+				</g:if>
+			
 				<g:if test="${atorInstance?.titulos}">
 				<li class="fieldcontain">
 					<span id="titulos-label" class="property-label"><g:message code="ator.titulos.label" default="Titulos" /></span>

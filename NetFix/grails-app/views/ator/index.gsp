@@ -26,6 +26,8 @@
 					
 						<g:sortableColumn property="nome" title="${message(code: 'ator.nome.label', default: 'Nome')}" />
 					
+						<g:sortableColumn property="foto" title="${message(code: 'ator.foto.label', default: 'Foto')}" />
+					
 					</tr>
 				</thead>
 				<tbody>
@@ -33,6 +35,14 @@
 					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
 					
 						<td><g:link action="show" id="${atorInstance.id}">${fieldValue(bean: atorInstance, field: "nome")}</g:link></td>
+					
+						<td> 
+                                                    <img src="${createLinkTo(dir:'ator/'+ atorInstance.id, file:''+atorInstance.foto)}"
+                                                            alt="${atorInstance.foto}"
+                                                            title="${atorInstance.foto}" 
+                                                            width="60px" height="60px"/>
+
+                                                </td>
 					
 					</tr>
 				</g:each>

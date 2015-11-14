@@ -1,22 +1,21 @@
 CREATE
 
-<g:form url="[resource:videoInstance, action:'save']" enctype="multipart/form-data">
+<g:form url="[resource:atorInstance, action:'save']" enctype="multipart/form-data">
 
 EDITE
 
-<g:form method="post" enctype="multipart/form-data">
+<g:form url="[resource:atorInstance, action:'update']" method="POST" >
 
 SHOW
 
-<span class="property-value" aria-labelledby="source-label">
-                                                     <video width="320" height="240" controls>
-                                                         <source src="${createLinkTo(dir:'video/'+ videoInstance.id, file:''+videoInstance.source)}" 
-                                                                    type="video/mp4">
-                                                     </video>
+<img src="${createLinkTo(dir:'ator/'+ atorInstance.id, file:''+atorInstance.foto)}"
+                                                            alt="${atorInstance.foto}"
+                                                            title="${atorInstance.foto}" 
+                                                            width="120px" height="120px"/></span>
 
 FORM
 
-<input type = "file" name="video"/>
+<input type = "file" name="imagem"/>
 
 CONTROLLER
 
@@ -24,42 +23,31 @@ static allowedMethods = [save: "POST", update: "POST", delete: "DELETE"]
 
 
 def save() {
-        def videoInstance = new Video(params)
+        def atorInstance = new Ator(params)
         
         
-        def videoFile = request.getFile('video')
+        def imageFile = request.getFile('imagem')
         
-        if(!videoFile.empty)
-            videoInstance.source = videoFile.originalFilename
+        if(!imageFile.empty)
+            atorInstance.foto = imageFile.originalFilename
         
-        if (!videoInstance.save(flush: true)) {
-            render(view: "create", model: [videoInstance: videoInstance])
+        if (!atorInstance.save(flush: true)) {
+            render(view: "create", model: [atorInstance: atorInstance])
             return
         }
         
         def webRootDir = servletContext.getRealPath("/")
-        def videoDir = new File(webRootDir, "/video/${videoInstance.id}")
-        videoDir.mkdirs()
+        def imageDir = new File(webRootDir, "/ator/${atorInstance.id}")
+        imageDir.mkdirs()
         
-        if(!videoFile.empty){
-            videoFile.transferTo( new File( videoDir, videoFile.originalFilename))
+        if(!imageFile.empty){
+            imageFile.transferTo( new File( imageDir, imageFile.originalFilename))
         }
         
-        flash.message = message(code: 'default.created.message', args: [message(code: 'video.label', default: 'Video'), videoInstance.id])
-        redirect(action: "show", id: videoInstance.id)
+        flash.message = message(code: 'default.created.message', args: [message(code: 'ator.label', default: 'Ator'), atorInstance.id])
+        redirect(action: "show", id: atorInstance.id)
         
     }
-def edit(long id) {
-        def videoInstance = Video.get(id)
-        if (!videoInstance) {
-            flash.message = message(code: 'default.not.found.message', args: [message(code: 'video.label', default: 'Video'), id])
-            redirect(action: "list")
-            return
-        }
-
-        [videoInstance: videoInstance]
-    }
-
     @Transactional
     def update(Long id,Long version) {
       def videoInstance = Video.get(id)
@@ -108,8 +96,13 @@ index
 
 <p><g:message code=" Total " /><g:message code="${filmeInstanceCount}" /></p>
 
-<!--g:sortableColumn property="source" title="${message(code: 'video.source.label', default: 'Source')}" /-->
-					
+<g:sortableColumn property="foto" title="${message(code: 'ator.foto.label', default: 'Foto')}" />
 
-<!--td>${fieldValue(bean: videoInstance, field: "source")}</td-->
-							
+
+<td> 
+                                                    <img src="${createLinkTo(dir:'ator/'+ atorInstance.id, file:''+atorInstance.foto)}"
+                                                            alt="${atorInstance.foto}"
+                                                            title="${atorInstance.foto}" 
+                                                            width="60px" height="60px"/>
+
+                                                </td>			
