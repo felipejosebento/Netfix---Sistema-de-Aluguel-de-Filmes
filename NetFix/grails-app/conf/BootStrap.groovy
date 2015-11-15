@@ -14,7 +14,12 @@ class BootStrap {
         brad.save()
         Ator angelina = new Ator(nome: "Angelina Jolie")
         angelina.save()
-        
+        Ator Aline_Juppenheim = new Ator(nome: "Aline Juppenheim") 
+        Aline_Juppenheim.save()
+
+
+
+
         /*MultipartHttpServletRequest mpr = (MultipartHttpServletRequest)request;  
         CommonsMultipartFile videoFile = (CommonsMultipartFile) mpr.getFile("C:/Users/rapha/Videos/GTA.mp4");
         
@@ -33,7 +38,7 @@ class BootStrap {
         new Filme(nome:"Guerra Mundial Z" ,sinopse:"infeccao no mundo",avaliacao_geral: '5',faixa_etaria: "livre",ano_lancamento:"2012",
             genero:"aventura",diretor:"rodriguez",
             capa: org.apache.commons.io.IOUtils.toByteArray(this.class.classLoader.getResourceAsStream('data/5.jpg')))
-        .addToAtores(brad).addToVideo(trailer1).save()
+        .addToAtores(brad).addToAtores(AlineJuppenheim).addToVideo(trailer1).save()
         // org.apache.commons.io.IOUtils.toByteArray()-> converte arquivo em bytes
         //this.class.classLoader.getResourceAsStream()-> le arquivo como InputStream
         
@@ -42,7 +47,8 @@ class BootStrap {
             capa: org.apache.commons.io.IOUtils.toByteArray(this.class.classLoader.getResourceAsStream('data/4.jpg')))
         .addToAtores(brad).addToAtores(angelina).addToVideo(trailer2).save()
         
-        
+        new Filme(nome:"Dorimindo com o Inimigo",sinopse:"Uma esposca espancada escapa do marido fingindo a própria morte e começa uma vida nova com uma nova identidade, até que o marido volta a encontra-la",avaliacao_geral:"4",faixa_etaria:"14",ano_lancamento:"1991",genero:"Suspense, Suspense sobre crimes, Suspenses psicológicos",diretor:"Joseph Ruben",capa: org.apache.commons.io.IOUtils.toByteArray(this.class.classLoader.getResourceAsStream('data/1.jpg'))).addToAtores(Brad).save()
+
     }
     def destroy = {
     }
