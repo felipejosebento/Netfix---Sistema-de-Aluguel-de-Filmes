@@ -10,7 +10,7 @@ class Titulo {
         faixa_etaria(inList: ["livre","10","12","14","16","18"])
         ano_lancamento(maxsize:4,matches:"[0-9]+")
         avaliacao_geral(min:0, max:5)
-        capa (nullable: true,maxSize:65536)
+        capa (nullable: true,maxSize:632832)
         sinopse(blank:false,size: 1..300,matches:"[a-zA-Z0-9 ]+")
         atores(nullable:true)
         capaNome(display:false, nullable:true)
