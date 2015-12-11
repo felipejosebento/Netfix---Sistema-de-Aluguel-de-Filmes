@@ -9,7 +9,7 @@ sshow
                                                     <img src="${createLink(controller:'filme', action:'showCapa', id:"${filmeInstance.id}")}"
                                                      
                                                          title="${filmeInstance.capaNome}" 
-                                                         width="120px" height="120px"/>
+                                                         height="200px"/>
                                                 </span>   
 				</li>
 				</g:if>

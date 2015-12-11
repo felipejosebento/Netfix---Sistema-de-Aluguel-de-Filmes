@@ -16,6 +16,8 @@ class BootStrap {
         angelina.save()
         Ator bruno = new Ator(nome: "Bruno Williams")
         bruno.save()
+        Ator alineJuppenheim = new Ator(nome: "Aline Juppenheim") 
+        alineJuppenheim.save()
 
 
 
@@ -36,16 +38,22 @@ class BootStrap {
         
         new Filme(nome:"Guerra Mundial Z" ,sinopse:"infeccao no mundo",avaliacao_geral: '5',faixa_etaria: "livre",ano_lancamento:"2012",
             genero:"aventura",diretor:"rodriguez",
-            capa: org.apache.commons.io.IOUtils.toByteArray(this.class.classLoader.getResourceAsStream('data/5.jpg')))
-        .addToAtores(brad).addToVideo(trailer1).save()
+            capa: org.apache.commons.io.IOUtils.toByteArray(this.class.classLoader.getResourceAsStream('data/guerraMundialZ.jpg')))
+        .addToAtores(brad).addToAtores(alineJuppenheim).addToVideo(trailer1).save()
         // org.apache.commons.io.IOUtils.toByteArray()-> converte arquivo em bytes
         //this.class.classLoader.getResourceAsStream()-> le arquivo como InputStream
         
         new Filme(nome:"Senhor e Senhor Smith" ,sinopse:"um pacato casal com um segredo imponente",avaliacao_geral: '4',faixa_etaria: "livre",ano_lancamento:"2013",
             genero:"aventura",diretor:"ramirez",
-            capa: org.apache.commons.io.IOUtils.toByteArray(this.class.classLoader.getResourceAsStream('data/4.jpg')))
+            capa: org.apache.commons.io.IOUtils.toByteArray(this.class.classLoader.getResourceAsStream('data/srSraSmith.jpg')))
         .addToAtores(brad).addToAtores(angelina).addToVideo(trailer2).save()
         
+        new Filme(nome:"Dorimindo com o Inimigo",
+            sinopse:"Uma esposa espancada escapa do marido fingindo a própria morte e começa uma vida nova com uma nova identidade, até que o marido volta a encontra-lá",
+            avaliacao_geral:"4",faixa_etaria:"14",ano_lancamento:"1991",
+            genero:"suspense",diretor:"Joseph Ruben",
+            capa: org.apache.commons.io.IOUtils.toByteArray(this.class.classLoader.getResourceAsStream('data/dormindoComOInimigo.jpg')))
+            .addToAtores(brad).save()
         
     }
     def destroy = {

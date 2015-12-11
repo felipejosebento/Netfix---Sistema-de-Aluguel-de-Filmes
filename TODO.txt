@@ -1,17 +1,17 @@
-TO DO
+﻿TO DO
 -arrumar primary key de titulo(2 etapa)
--Arrumar show do Filme
 -Arrumar visoes de Seriado para aparecer foto
 -COLOCAR MAIS ATRIBUTOS PARA O TAG DE HTML NO ARQ
 	view/video/show.gsp
 	linha 74
 	material de apoio http://www.w3schools.com/tags/tag_video.asp - opcional atributes
--Baixar videos, ver qual formato certo!! Resposta: MP4
+-Baixar videos MP4
 -Arrumar Astah
 -Trocar nome Video por ajustes?? trocar atributo source por video????
 
 
 DONE
+-Arrumar show do Filme
 -Colocar foto no Ator(!!!!! igual coloca video!)
 -Como adicionar frames do Video(arquivo) pelo BootStrap? editar video e colocar frames por la
 	Solucao do problema acima é criar videos pelo BootStrap e colocar source(mp4) pelo webAPP
