@@ -24,11 +24,11 @@
 			<thead>
 					<tr>
 					
-						<g:sortableColumn property="nome" title="${message(code: 'perfil.nome.label', default: 'Nome')}" />
-					
-						<g:sortableColumn property="qualidade" title="${message(code: 'perfil.qualidade.label', default: 'Qualidade')}" />
+						<g:sortableColumn property="tipo" title="${message(code: 'perfil.tipo.label', default: 'Tipo')}" />
 					
 						<g:sortableColumn property="pergunta" title="${message(code: 'perfil.pergunta.label', default: 'Pergunta')}" />
+					
+						<g:sortableColumn property="nome" title="${message(code: 'perfil.nome.label', default: 'Nome')}" />
 					
 					</tr>
 				</thead>
@@ -36,11 +36,11 @@
 				<g:each in="${perfilInstanceList}" status="i" var="perfilInstance">
 					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
 					
-						<td><g:link action="show" id="${perfilInstance.id}">${fieldValue(bean: perfilInstance, field: "nome")}</g:link></td>
-					
-						<td>${fieldValue(bean: perfilInstance, field: "qualidade")}</td>
+						<td><g:link action="show" id="${perfilInstance.id}">${fieldValue(bean: perfilInstance, field: "tipo")}</g:link></td>
 					
 						<td>${fieldValue(bean: perfilInstance, field: "pergunta")}</td>
+					
+						<td>${fieldValue(bean: perfilInstance, field: "nome")}</td>
 					
 					</tr>
 				</g:each>

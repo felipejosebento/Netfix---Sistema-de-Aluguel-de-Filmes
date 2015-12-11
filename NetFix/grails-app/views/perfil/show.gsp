@@ -23,20 +23,11 @@
 			</g:if>
 			<ol class="property-list perfil">
 			
-				<g:if test="${perfilInstance?.nome}">
+				<g:if test="${perfilInstance?.tipo}">
 				<li class="fieldcontain">
-					<span id="nome-label" class="property-label"><g:message code="perfil.nome.label" default="Nome" /></span>
+					<span id="tipo-label" class="property-label"><g:message code="perfil.tipo.label" default="Tipo" /></span>
 					
-						<span class="property-value" aria-labelledby="nome-label"><g:fieldValue bean="${perfilInstance}" field="nome"/></span>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${perfilInstance?.qualidade}">
-				<li class="fieldcontain">
-					<span id="qualidade-label" class="property-label"><g:message code="perfil.qualidade.label" default="Qualidade" /></span>
-					
-						<span class="property-value" aria-labelledby="qualidade-label"><g:fieldValue bean="${perfilInstance}" field="qualidade"/></span>
+						<span class="property-value" aria-labelledby="tipo-label"><g:fieldValue bean="${perfilInstance}" field="tipo"/></span>
 					
 				</li>
 				</g:if>
@@ -46,6 +37,15 @@
 					<span id="pergunta-label" class="property-label"><g:message code="perfil.pergunta.label" default="Pergunta" /></span>
 					
 						<span class="property-value" aria-labelledby="pergunta-label"><g:fieldValue bean="${perfilInstance}" field="pergunta"/></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${perfilInstance?.nome}">
+				<li class="fieldcontain">
+					<span id="nome-label" class="property-label"><g:message code="perfil.nome.label" default="Nome" /></span>
+					
+						<span class="property-value" aria-labelledby="nome-label"><g:fieldValue bean="${perfilInstance}" field="nome"/></span>
 					
 				</li>
 				</g:if>

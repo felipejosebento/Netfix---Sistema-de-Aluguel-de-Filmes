@@ -3,14 +3,12 @@ package br.ufscar.dc
 public class Perfil {
 
     static constraints = {
-        nome(size:1..30,matches:"[a-zA-Z0-9 }+")
-        qualidade ( inList: ["baixo","médio","automatico","alto"])
-        pergunta( inList: ["baixo","médio","automatico","alto"])
-     
+        tipo ( inList: ["kids","adulto"])
+        pergunta( inList: ["Tiro","CorridaDeCarro","BeijoRomantico","Engraçada"])
     }
-    String nome  
-    String qualidade ="baixo" 
+    String nome;
+    String tipo 
     String pergunta
-   
     
+    // Algoritmo Perfil
 }
