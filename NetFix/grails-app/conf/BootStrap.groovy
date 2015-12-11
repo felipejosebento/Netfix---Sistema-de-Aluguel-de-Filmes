@@ -1,7 +1,4 @@
-
-import br.ufscar.dc.Filme
-import br.ufscar.dc.Video
-import br.ufscar.dc.Ator
+import br.ufscar.dc.*
 import grails.transaction.Transactional
 import org.springframework.web.multipart.commons.CommonsMultipartFile
 import org.springframework.web.multipart.MultipartHttpServletRequest
@@ -19,7 +16,22 @@ class BootStrap {
         Ator alineJuppenheim = new Ator(nome: "Aline Juppenheim") 
         alineJuppenheim.save()
 
-
+       //
+            def adminPapel = Papel.findOrSaveWhere(authority: 'ROLE_ADMIN')
+            def user = Usuario.findOrSaveWhere(username: 'admin', password: 'admin', nome:'Administrador')
+            
+            if(!user.authorities.contains(adminPapel))
+            {
+                UsuarioPapel.create(user, adminPapel, true)
+            }    
+            def normalPapel = Papel.findOrSaveWhere(authority: 'ROLE_USER')
+            def user2 = Usuario.findOrSaveWhere(username: 'user', password: 'password', nome:'Usuario')
+            
+            if(!user.authorities.contains(normalPapel))
+            {
+                UsuarioPapel.create(user2, normalPapel, true)
+            } 
+       //
 
         /*MultipartHttpServletRequest mpr = (MultipartHttpServletRequest)request;  
         CommonsMultipartFile videoFile = (CommonsMultipartFile) mpr.getFile("C:/Users/rapha/Videos/GTA.mp4");

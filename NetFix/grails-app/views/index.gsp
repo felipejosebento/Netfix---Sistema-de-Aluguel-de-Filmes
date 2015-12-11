@@ -15,7 +15,9 @@
         <div id="header-wrapper" class="wrapper">
             <div id="header">
 
-                                                <!-- Logo -->
+                <!--<input type="submit" value="Iniciar Sessão" onclick="location. href= 'http://localhost:8080/NetFix/login/auth' "> <input type="submit" value="Encerrar Sessão" onclick="location. href= 'http://localhost:8080/NetFix/logout' "> -->
+             
+                <!-- Logo -->
                 <div id="logo">
 
 
