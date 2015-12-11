@@ -135,6 +135,7 @@ grails.plugin.springsecurity.controllerAnnotations.staticRules = [
         '/**/seriado/**':   ['permitAll'],
         '/**/titulo/**':    ['permitAll'],
         '/**/video/**':     ['permitAll'],
+        '/**/perfil/**':    ['permitAll'],
 	'/**/css/**':       ['permitAll'],
 	'/**/images/**':    ['permitAll'],
 	'/**/favicon.ico':  ['permitAll']

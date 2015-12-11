@@ -37,6 +37,7 @@
                         <li><a href="http://localhost:8080/NetFix/seriado/index"><h1 style="color:black">Seriado</a></li>
                         <li><a href="http://localhost:8080/NetFix/episodio/index"><h1 style="color:black">Episódio</a></li>
                         <li><a href="http://localhost:8080/NetFix/video/index"><h1 style="color:black">Video</a></li>
+                        <li><a href="http://localhost:8080/NetFix/perfil/index"><h1 style="color:black">Perfil</a></li>
                     </ul>
                 </nav>
             </div>
