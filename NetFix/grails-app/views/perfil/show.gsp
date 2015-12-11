@@ -23,6 +23,33 @@
 			</g:if>
 			<ol class="property-list perfil">
 			
+				<g:if test="${perfilInstance?.nome}">
+				<li class="fieldcontain">
+					<span id="nome-label" class="property-label"><g:message code="perfil.nome.label" default="Nome" /></span>
+					
+						<span class="property-value" aria-labelledby="nome-label"><g:fieldValue bean="${perfilInstance}" field="nome"/></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${perfilInstance?.qualidade}">
+				<li class="fieldcontain">
+					<span id="qualidade-label" class="property-label"><g:message code="perfil.qualidade.label" default="Qualidade" /></span>
+					
+						<span class="property-value" aria-labelledby="qualidade-label"><g:fieldValue bean="${perfilInstance}" field="qualidade"/></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${perfilInstance?.pergunta}">
+				<li class="fieldcontain">
+					<span id="pergunta-label" class="property-label"><g:message code="perfil.pergunta.label" default="Pergunta" /></span>
+					
+						<span class="property-value" aria-labelledby="pergunta-label"><g:fieldValue bean="${perfilInstance}" field="pergunta"/></span>
+					
+				</li>
+				</g:if>
+			
 			</ol>
 			<g:form url="[resource:perfilInstance, action:'delete']" method="DELETE">
 				<fieldset class="buttons">
