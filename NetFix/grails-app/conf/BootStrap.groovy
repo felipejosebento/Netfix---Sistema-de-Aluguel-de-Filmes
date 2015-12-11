@@ -16,12 +16,7 @@ class BootStrap {
         angelina.save()
         Ator bruno = new Ator(nome: "Bruno Williams")
         bruno.save()
-        //
-        
-       
-        
-        
-        //
+
 
 
         /*MultipartHttpServletRequest mpr = (MultipartHttpServletRequest)request;  
